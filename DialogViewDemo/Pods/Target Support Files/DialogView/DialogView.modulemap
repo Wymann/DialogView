@@ -1,0 +1,6 @@
+framework module DialogView {
+  umbrella header "DialogView-umbrella.h"
+
+  export *
+  module * { export * }
+}

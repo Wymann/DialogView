@@ -1,0 +1,10 @@
+platform :ios, '9.0'
+inhibit_all_warnings! # 消除第三方警告
+
+target 'DialogViewDemo' do
+  use_frameworks!
+
+  pod 'DialogView', :path => '../LocalPods/DialogView'
+  pod 'DialogViewSwift', :path => '../LocalPods/DialogViewSwift'
+  
+end

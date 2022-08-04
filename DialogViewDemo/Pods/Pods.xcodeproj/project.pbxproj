@@ -1,0 +1,1250 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		DEB6F297460DA52F6902D133B5AEA1BC /* DialogViewSwift */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7DEA8E8D1F09799709BDC16FD330B376 /* Build configuration list for PBXAggregateTarget "DialogViewSwift" */;
+			buildPhases = (
+			);
+			dependencies = (
+				D053A366B681917055A5DD0FABD7499F /* PBXTargetDependency */,
+			);
+			name = DialogViewSwift;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		00F1C3641E81C118B25C58F1470D2750 /* UIViewController+Dialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B207DAA30D3A804936CBF058AB77A39 /* UIViewController+Dialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0301F81D5F3BA3DCCA1C85CF331EB90F /* TextFieldDialogElement.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D63E7A259D86051DD1F00FA300FACE /* TextFieldDialogElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09BB25A0FB8F34A248FF37319C344801 /* DialogResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E6613C47938BDEDE8F6C2CD8B604E32 /* DialogResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D747C9713C980CF790C8812BC52EA14 /* UITextView+Dialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F317BF2B9E2A7B467A0C1A22ED18298 /* UITextView+Dialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1345FB2DB1C17B49CB1B1757301E823C /* BasicDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBA20DCBC815712C55B4208C521BCD6 /* BasicDialogModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1947980FAE31D1BB408145186CF87512 /* BasicDialogElement.h in Headers */ = {isa = PBXBuildFile; fileRef = A8019EF33C12A22BAFD4F17E473DC4B4 /* BasicDialogElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A79E4DC453CC112306B26FEC8FFD1A0 /* TextDialogElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2F591F0E632174A546F6E79086B51 /* TextDialogElement.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1C97EB39882F7E1ADBCC6FCD2D8DB0C4 /* Dialog+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F8DA94A2720E244A0C7B0C710CEAE /* Dialog+CustomView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		21331E1EB562497500BBF5BC3DBCFA3C /* UIViewController+Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E005F3007BFD8B6007BB86C04F5764 /* UIViewController+Dialog.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		25675250CFEF7623AEAAD1B4CFD8CBBC /* SelectorDialogModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D07BF2566CCEC5699D64772124675E6B /* SelectorDialogModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27B41FA5385B11B76F4CFA5F829D855B /* TextViewDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F019DA42447D34637C84997E7B5499 /* TextViewDialogModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2EF17DC6CABAB74B18E06147E3B92AC9 /* TextFieldDialogModel.h in Headers */ = {isa = PBXBuildFile; fileRef = ADDF631AC1C201F97F0F8C6CEE8CF10F /* TextFieldDialogModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3203CDE3B467FB93A5B9EF200928DCEE /* Dialog+LocalImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDAAD89F242B7E2FA6413D52A284036 /* Dialog+LocalImage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		39BDA1C7AF18C11D5113568E3548D451 /* BasicDialogElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EC87E4D7254618AD881C2162AFF855 /* BasicDialogElement.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3C90D2770B21AB4F960F9DF9D9A0D686 /* Dialog+NetImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F55F535ABFB89649A3DA9129007CD14F /* Dialog+NetImage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		41583C355FE140AB092E9CF79FA58287 /* Pods-DialogViewDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3B47F0A6573606966C2C2D3A8B664AA /* Pods-DialogViewDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		524B44A4922055AC7E53B534265DAF48 /* SelectorDialogElement.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8FD7BA9D9C6970B176378E20B7434C /* SelectorDialogElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		564F76C9FB1C5E7AE08E2FBDA3E3D3D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		58954C7A53D1251E7CE81E07E68DB60E /* TextDialogModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D03BE66A63FB5950C4005EC5DD9019 /* TextDialogModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5983B9F105F361ED1FDA31C4D9E2AED8 /* DialogDemoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 980C38A97C300D3D4E48DBA0149F07F6 /* DialogDemoViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A10522C4D409706C924F43057D07DEF /* Dialog+Input.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F99713A04848B3690FE4800A17C2DC1 /* Dialog+Input.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BB3DF3D590BB0FC48F23E246FC709A0 /* DialogTextTool.h in Headers */ = {isa = PBXBuildFile; fileRef = AA8897DBD2860367FE85EC291D06063D /* DialogTextTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EE91FAC54F7B3E284D08810715C7274 /* DialogModelEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F0CE05146370015D76D7226D27FB5E /* DialogModelEditor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		61BBC4F9FBCCE2D6672EF4EAB94355D8 /* Dialog+NetImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1580980228AE82ED51CB24C2F6BDB4 /* Dialog+NetImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630781D3B0A01C0C97D1EDD51DDD6160 /* ImageDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9470B6D40A3EC35A14EED2393223643 /* ImageDialogModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		66ACA3E14FE4DAC87B6706FFD6574418 /* DialogView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1336BFC7DE2B3F745ED029F625B8212C /* DialogView-dummy.m */; };
+		67F00DF50C13D0A2B732B04D4BDDFC3B /* Pods-DialogViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD735F3F2952B5054A9CDB1E9BBB939A /* Pods-DialogViewDemo-dummy.m */; };
+		71572F2221EF33C3C7AE6C85208A3D37 /* DialogView-DialogView in Resources */ = {isa = PBXBuildFile; fileRef = 48905D759D2D4656A11630D27A29AAA6 /* DialogView-DialogView */; };
+		76CD35D969ECA574F37830C764EE23E4 /* UITextView+Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C4A12A5299503B2751B6CA5EC7045 /* UITextView+Dialog.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		77A3B9D7D6C516E3452D1A955BDF4877 /* TextShouldChangeResModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 284538A16D952946E0C19B90804B9B81 /* TextShouldChangeResModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7872A0AA4E788D14DA0750C66C66FC46 /* TextFieldDialogElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 688912F1171E0FC41804C55C81100B90 /* TextFieldDialogElement.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7EA4777088C786C6CBA28F4066AF387A /* DialogDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7F55EF5702FDDAAE1C362537F02E3F /* DialogDemoViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		86D69E064DAA92C3ABA3FEFEDFD4F99A /* BasicDialogModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EFA1143922B67BC8416FD2741F57685 /* BasicDialogModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		896C3992B000AF87832187FD0B9154E1 /* TextViewDialogElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 58EA03E2B88EEFD8B9ADDBA3D0C0AB50 /* TextViewDialogElement.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		89DA4D1C4123B81FDEC3B58A32339842 /* Dialog+Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 79161308000C21DE9CDBF252BD8ED441 /* Dialog+Selector.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8A9C47E2E10645937F96A1B6E907DAF2 /* Dialog+LocalImage.h in Headers */ = {isa = PBXBuildFile; fileRef = ED41DF2B1BB6BBAF66B083C1D5051886 /* Dialog+LocalImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F18952A10588BCD39CB4DE37A4CB2FF /* ButtonsDialogElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EFFACF12A64CEEE252D224AC03049E /* ButtonsDialogElement.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9434F18D5903B9670BA85868E87C7E38 /* DialogHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 525BA1500CBA5C9ED692F8522556ABF7 /* DialogHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		963CC668E2B272D35BAF6B8C86DF99DC /* Dialog+SpecialColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 5889F72DE10BEFFF6A4A77932671AD0A /* Dialog+SpecialColors.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		96BC20BA02104E1C21405F2F7C747B93 /* TextFieldDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59614EE4848E9065CE31F181DF550655 /* TextFieldDialogModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		986475B8A20E01DB403368BA536A0345 /* DialogTextTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAB195AEB94488472975FF16604027 /* DialogTextTool.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		98E16356DF87ED08DA09043940E7E981 /* Dialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 47DAD3DA6E48984846F3CEC480E713A0 /* Dialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98EF4B24085EE7960D6604AE33B70724 /* UIView+Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FD77B6909083AC992D13B497CC9060 /* UIView+Dialog.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9D7959C15A5FEA0A6DCEB83466D3F1BE /* DialogResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F349D6062ED8F33B20CEA80795E57835 /* DialogResult.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A02C1209A5643461575C1E545DE51DF6 /* TextDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C03EDA582DB32DCA97E0D806B7AD8169 /* TextDialogModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A21699F8B9E9717A3F201D02CA86E58C /* DialogModelEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 41DA261DE182FE8E89FF13293BF297AE /* DialogModelEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A59B74D51303F99CAAC7126101904335 /* Dialog+Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 96F5E4FBA6BB0450773A47BEC6B18512 /* Dialog+Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6418AD7980610B4B5241D836757DA17 /* ButtonsDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8737C3E5F80229363489B8A72BCC776D /* ButtonsDialogModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A84C0EFAA1F6B13C65A19858180D1275 /* ImageDialogModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FC763B9BC4E276281F0FB5115CF6AC2 /* ImageDialogModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA6D9CD2BC4A00B09A9F26C5342D7C73 /* DialogView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D6BD615343671B6102FD9DCF07CEA3 /* DialogView.xcassets */; };
+		ADC4BF0CD76B8EF1624E9C4F86D379B4 /* Dialog+Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3C4DE8F500FE35C954E058F86A7BD6 /* Dialog+Input.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AF78E7D78E0A081D4DA3E9843DB80545 /* Dialog+SpecialColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE52B56B5C3CB34CDDB8E5E00630B00 /* Dialog+SpecialColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B52A863F9C40CB72D9AEB4DB8C4DD2C3 /* TextViewDialogModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1873C140AB0F14C417F2F51D05583975 /* TextViewDialogModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B573B778BA1029BADEE0E2AFFABDDA1E /* DialogViewSwift.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AEDEBFD3A50B3E04264B0AAE1EA13A /* DialogViewSwift.xcassets */; };
+		B72220E485AF12D2924BD532F1167F70 /* UIView+Dialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9B01152EAD3D3979B25D4DF46ACCA3 /* UIView+Dialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B910CB27A231271FED428445CFF68665 /* ImageDialogElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 00066F2F2D4C8DA37C10B148FEF8289E /* ImageDialogElement.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BDFC9E461A54C02A52E47E8A83E33743 /* SelectorDialogElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC3C72A841713E81BBC989C10ADCDD /* SelectorDialogElement.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BFD2210AF405617D9859AD7F37E2AFA7 /* Dialog+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FE2BC01FE86510D35CFAA959955784 /* Dialog+Common.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C500DFB4503347140CEE07A75BBF42E8 /* TextShouldChangeResModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 80B8BD35FC3AE9A66976A2D228BE37A7 /* TextShouldChangeResModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C56212AD02A98A6C2C875E07A6E51DAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C58F3DBA5AE19AC1E5A16EA78B9A927D /* Dialog+CustomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD39D6686A5E6821551A46105A7A37F /* Dialog+CustomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C710E8EE82EBD9A5F19C6CA9B7B6DE1C /* TextViewDialogElement.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF0791DCCEEB807C9D0A56A33A8561E /* TextViewDialogElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF4E2EFF6B254C8B5B1D378F5B8A9370 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D500942B39D7A0B1C0D8A87491A74C /* Dialog.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D575EEA70569722C75254791FDFF5CFD /* DialogView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69CEDEE629BD0D85E85E14BB1AACAFB1 /* DialogView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E18C3FEAE69F384F9BCAAB010B80DA06 /* DialogView.h in Headers */ = {isa = PBXBuildFile; fileRef = 35E2A512CA81E939EE3A96B1892B76A7 /* DialogView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8F14F8D71AAED03AF83C30A81758EF7 /* Dialog+Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1781D6E17289CE8F1F69CF13997E8CA2 /* Dialog+Selector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAD975C2879AC88B6F37C0DF3CCADEDA /* ButtonsDialogElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 57E0D6E91F27BA15C388B58027A06EC9 /* ButtonsDialogElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F26D1D44EF64FA4FA887A0264B456BF8 /* ImageDialogElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C023FB2E9CF9C81AA1BA500502A484F /* ImageDialogElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6DA2784DA00F7D441C4EBF9B2BF12B0 /* TextDialogElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BCDD56C49FA6C57EBDF140253C7CE97 /* TextDialogElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7244CE6758E245BB86D4A467D60505B /* ButtonsDialogModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C0371FA145D38B4E606F1ED53BBD5483 /* ButtonsDialogModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F941B844AEDCD6782E443DC9390E0FF8 /* DialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 894CC30CB49764AD610523A933EEDB2A /* DialogView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FAD29D325A51597D350F5D7EB3352A15 /* SelectorDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673CFA9D0AD3093BDB1C624FE21FBEE /* SelectorDialogModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36ACE1E58E5F3A37ED431E2ED82F98DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15B2E677CB0DD1A6CD73E224DC9D1AF6;
+			remoteInfo = "DialogView-DialogView";
+		};
+		6B1A0A147C187DB751C6BFECB3379453 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58CA11A26BD447042DE1A62A0D3B48D2;
+			remoteInfo = "DialogViewSwift-DialogViewSwift";
+		};
+		A0678E6578CF0072301F9CDEC37E325D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B48D38C4FB0509486CB9409C51B2A6E;
+			remoteInfo = DialogView;
+		};
+		BA6BB9F98855A18E5732F73524452C8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEB6F297460DA52F6902D133B5AEA1BC;
+			remoteInfo = DialogViewSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00066F2F2D4C8DA37C10B148FEF8289E /* ImageDialogElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageDialogElement.m; sourceTree = "<group>"; };
+		00334CB79104F9A3D13C702EDFF4E3AE /* DialogView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DialogView-prefix.pch"; sourceTree = "<group>"; };
+		076F8DA94A2720E244A0C7B0C710CEAE /* Dialog+CustomView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dialog+CustomView.m"; sourceTree = "<group>"; };
+		0B207DAA30D3A804936CBF058AB77A39 /* UIViewController+Dialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Dialog.h"; sourceTree = "<group>"; };
+		114975C57603DEE061E3D39F4FD77C49 /* Pods-DialogViewDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DialogViewDemo-resources.sh"; sourceTree = "<group>"; };
+		1336BFC7DE2B3F745ED029F625B8212C /* DialogView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DialogView-dummy.m"; sourceTree = "<group>"; };
+		1781D6E17289CE8F1F69CF13997E8CA2 /* Dialog+Selector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dialog+Selector.h"; sourceTree = "<group>"; };
+		1873C140AB0F14C417F2F51D05583975 /* TextViewDialogModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TextViewDialogModel.h; sourceTree = "<group>"; };
+		1FC763B9BC4E276281F0FB5115CF6AC2 /* ImageDialogModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageDialogModel.h; sourceTree = "<group>"; };
+		21A5A444DB5C831244CC8614B60BB1A3 /* Pods-DialogViewDemo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DialogViewDemo"; path = Pods_DialogViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22EC87E4D7254618AD881C2162AFF855 /* BasicDialogElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasicDialogElement.m; sourceTree = "<group>"; };
+		2308FEFA26953E4B45EAB4D6B0EF272A /* Pods-DialogViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DialogViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		24EAB195AEB94488472975FF16604027 /* DialogTextTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DialogTextTool.m; sourceTree = "<group>"; };
+		284538A16D952946E0C19B90804B9B81 /* TextShouldChangeResModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TextShouldChangeResModel.m; sourceTree = "<group>"; };
+		28881422F9538607AB3B32A0A31C5F98 /* DialogView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DialogView.release.xcconfig; sourceTree = "<group>"; };
+		2A6993973F93AF48D9C1AFD97992AF03 /* Pods-DialogViewDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DialogViewDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		2E9B01152EAD3D3979B25D4DF46ACCA3 /* UIView+Dialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Dialog.h"; sourceTree = "<group>"; };
+		32D500942B39D7A0B1C0D8A87491A74C /* Dialog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Dialog.m; sourceTree = "<group>"; };
+		35E2A512CA81E939EE3A96B1892B76A7 /* DialogView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DialogView.h; sourceTree = "<group>"; };
+		3656DDA7677E69B25C4B3A3A0CC94478 /* DialogView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DialogView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3B2EB61618538E6B42D69CBB50DB0D1F /* DialogViewSwift-DialogViewSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "DialogViewSwift-DialogViewSwift"; path = DialogViewSwift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BCDD56C49FA6C57EBDF140253C7CE97 /* TextDialogElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TextDialogElement.h; sourceTree = "<group>"; };
+		3E05D217FF753FABEE9D776EC10A1675 /* DialogView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DialogView; path = DialogView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E6613C47938BDEDE8F6C2CD8B604E32 /* DialogResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DialogResult.h; sourceTree = "<group>"; };
+		41DA261DE182FE8E89FF13293BF297AE /* DialogModelEditor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DialogModelEditor.h; sourceTree = "<group>"; };
+		45B6336CED77836040FD1853BCEF0000 /* ResourceBundle-DialogViewSwift-DialogViewSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DialogViewSwift-DialogViewSwift-Info.plist"; sourceTree = "<group>"; };
+		4673CFA9D0AD3093BDB1C624FE21FBEE /* SelectorDialogModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SelectorDialogModel.m; sourceTree = "<group>"; };
+		46E005F3007BFD8B6007BB86C04F5764 /* UIViewController+Dialog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Dialog.m"; sourceTree = "<group>"; };
+		47DAD3DA6E48984846F3CEC480E713A0 /* Dialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Dialog.h; sourceTree = "<group>"; };
+		47F019DA42447D34637C84997E7B5499 /* TextViewDialogModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TextViewDialogModel.m; sourceTree = "<group>"; };
+		48905D759D2D4656A11630D27A29AAA6 /* DialogView-DialogView */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "DialogView-DialogView"; path = DialogView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A3C4DE8F500FE35C954E058F86A7BD6 /* Dialog+Input.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dialog+Input.m"; sourceTree = "<group>"; };
+		525BA1500CBA5C9ED692F8522556ABF7 /* DialogHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DialogHeader.h; sourceTree = "<group>"; };
+		52AEDEBFD3A50B3E04264B0AAE1EA13A /* DialogViewSwift.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = DialogViewSwift.xcassets; path = DialogViewSwift/Resources/DialogViewSwift.xcassets; sourceTree = "<group>"; };
+		5427EA9B9A3C387D479AC79EF025035F /* Pods-DialogViewDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DialogViewDemo-Info.plist"; sourceTree = "<group>"; };
+		57E0D6E91F27BA15C388B58027A06EC9 /* ButtonsDialogElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ButtonsDialogElement.h; sourceTree = "<group>"; };
+		57FE2BC01FE86510D35CFAA959955784 /* Dialog+Common.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dialog+Common.m"; sourceTree = "<group>"; };
+		5889F72DE10BEFFF6A4A77932671AD0A /* Dialog+SpecialColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dialog+SpecialColors.m"; sourceTree = "<group>"; };
+		58EA03E2B88EEFD8B9ADDBA3D0C0AB50 /* TextViewDialogElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TextViewDialogElement.m; sourceTree = "<group>"; };
+		59614EE4848E9065CE31F181DF550655 /* TextFieldDialogModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TextFieldDialogModel.m; sourceTree = "<group>"; };
+		5BD39D6686A5E6821551A46105A7A37F /* Dialog+CustomView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dialog+CustomView.h"; sourceTree = "<group>"; };
+		5C023FB2E9CF9C81AA1BA500502A484F /* ImageDialogElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ImageDialogElement.h; sourceTree = "<group>"; };
+		688912F1171E0FC41804C55C81100B90 /* TextFieldDialogElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TextFieldDialogElement.m; sourceTree = "<group>"; };
+		69CEDEE629BD0D85E85E14BB1AACAFB1 /* DialogView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DialogView-umbrella.h"; sourceTree = "<group>"; };
+		6A0C4A12A5299503B2751B6CA5EC7045 /* UITextView+Dialog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Dialog.m"; sourceTree = "<group>"; };
+		6EFA1143922B67BC8416FD2741F57685 /* BasicDialogModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasicDialogModel.h; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		77F2F591F0E632174A546F6E79086B51 /* TextDialogElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TextDialogElement.m; sourceTree = "<group>"; };
+		79161308000C21DE9CDBF252BD8ED441 /* Dialog+Selector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dialog+Selector.m"; sourceTree = "<group>"; };
+		7EE52B56B5C3CB34CDDB8E5E00630B00 /* Dialog+SpecialColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dialog+SpecialColors.h"; sourceTree = "<group>"; };
+		80B8BD35FC3AE9A66976A2D228BE37A7 /* TextShouldChangeResModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TextShouldChangeResModel.h; sourceTree = "<group>"; };
+		84D38241986D014A10C56A9D6F42EEEE /* DialogViewSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DialogViewSwift.debug.xcconfig; sourceTree = "<group>"; };
+		8737C3E5F80229363489B8A72BCC776D /* ButtonsDialogModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ButtonsDialogModel.m; sourceTree = "<group>"; };
+		88F0CE05146370015D76D7226D27FB5E /* DialogModelEditor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DialogModelEditor.m; sourceTree = "<group>"; };
+		894CC30CB49764AD610523A933EEDB2A /* DialogView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DialogView.m; sourceTree = "<group>"; };
+		8FF37C7C4B658A653B944B1E1D35946F /* ResourceBundle-DialogView-DialogView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DialogView-DialogView-Info.plist"; sourceTree = "<group>"; };
+		91157DAC0B6C20E62A94C6A834CF8243 /* DialogViewSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DialogViewSwift.release.xcconfig; sourceTree = "<group>"; };
+		91EFFACF12A64CEEE252D224AC03049E /* ButtonsDialogElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ButtonsDialogElement.m; sourceTree = "<group>"; };
+		96F5E4FBA6BB0450773A47BEC6B18512 /* Dialog+Common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dialog+Common.h"; sourceTree = "<group>"; };
+		980C38A97C300D3D4E48DBA0149F07F6 /* DialogDemoViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DialogDemoViewController.h; sourceTree = "<group>"; };
+		98D1546E8442B6894389BAD2583A83E9 /* Pods-DialogViewDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DialogViewDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EAC3C72A841713E81BBC989C10ADCDD /* SelectorDialogElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SelectorDialogElement.m; sourceTree = "<group>"; };
+		9F317BF2B9E2A7B467A0C1A22ED18298 /* UITextView+Dialog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextView+Dialog.h"; sourceTree = "<group>"; };
+		9F99713A04848B3690FE4800A17C2DC1 /* Dialog+Input.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dialog+Input.h"; sourceTree = "<group>"; };
+		A8019EF33C12A22BAFD4F17E473DC4B4 /* BasicDialogElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BasicDialogElement.h; sourceTree = "<group>"; };
+		A9470B6D40A3EC35A14EED2393223643 /* ImageDialogModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ImageDialogModel.m; sourceTree = "<group>"; };
+		AA8897DBD2860367FE85EC291D06063D /* DialogTextTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DialogTextTool.h; sourceTree = "<group>"; };
+		AC7F55EF5702FDDAAE1C362537F02E3F /* DialogDemoViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DialogDemoViewController.m; sourceTree = "<group>"; };
+		ADBA20DCBC815712C55B4208C521BCD6 /* BasicDialogModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BasicDialogModel.m; sourceTree = "<group>"; };
+		ADDF631AC1C201F97F0F8C6CEE8CF10F /* TextFieldDialogModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TextFieldDialogModel.h; sourceTree = "<group>"; };
+		B348D07896E4FF4B761DFF33A62C6E37 /* Pods-DialogViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DialogViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		BBCAB8200A53174AE6A445058B663831 /* Pods-DialogViewDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DialogViewDemo.modulemap"; sourceTree = "<group>"; };
+		C0371FA145D38B4E606F1ED53BBD5483 /* ButtonsDialogModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ButtonsDialogModel.h; sourceTree = "<group>"; };
+		C03EDA582DB32DCA97E0D806B7AD8169 /* TextDialogModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TextDialogModel.m; sourceTree = "<group>"; };
+		C7D6BD615343671B6102FD9DCF07CEA3 /* DialogView.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = DialogView.xcassets; path = DialogView/Resources/DialogView.xcassets; sourceTree = "<group>"; };
+		C9D03BE66A63FB5950C4005EC5DD9019 /* TextDialogModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TextDialogModel.h; sourceTree = "<group>"; };
+		CD1580980228AE82ED51CB24C2F6BDB4 /* Dialog+NetImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dialog+NetImage.h"; sourceTree = "<group>"; };
+		D07BF2566CCEC5699D64772124675E6B /* SelectorDialogModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SelectorDialogModel.h; sourceTree = "<group>"; };
+		D1D63E7A259D86051DD1F00FA300FACE /* TextFieldDialogElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TextFieldDialogElement.h; sourceTree = "<group>"; };
+		DA1713DF0C68642E2FED3AC51F38653F /* DialogViewSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DialogViewSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DEF0791DCCEEB807C9D0A56A33A8561E /* TextViewDialogElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TextViewDialogElement.h; sourceTree = "<group>"; };
+		E0BA9B223157C713330757A8A4B34028 /* DialogView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DialogView.modulemap; sourceTree = "<group>"; };
+		E3B47F0A6573606966C2C2D3A8B664AA /* Pods-DialogViewDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DialogViewDemo-umbrella.h"; sourceTree = "<group>"; };
+		E5D1D4CFAFB4BF239DBD21D3CA749C46 /* DialogView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DialogView-Info.plist"; sourceTree = "<group>"; };
+		EBDAAD89F242B7E2FA6413D52A284036 /* Dialog+LocalImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dialog+LocalImage.m"; sourceTree = "<group>"; };
+		EC1F980066EC9F1297581F1E78B5CC7F /* Pods-DialogViewDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DialogViewDemo-frameworks.sh"; sourceTree = "<group>"; };
+		ED41DF2B1BB6BBAF66B083C1D5051886 /* Dialog+LocalImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dialog+LocalImage.h"; sourceTree = "<group>"; };
+		F349D6062ED8F33B20CEA80795E57835 /* DialogResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DialogResult.m; sourceTree = "<group>"; };
+		F55F535ABFB89649A3DA9129007CD14F /* Dialog+NetImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Dialog+NetImage.m"; sourceTree = "<group>"; };
+		F6FD77B6909083AC992D13B497CC9060 /* UIView+Dialog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Dialog.m"; sourceTree = "<group>"; };
+		FB18163AD595BBEA49273782F371599B /* DialogView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DialogView.debug.xcconfig; sourceTree = "<group>"; };
+		FD735F3F2952B5054A9CDB1E9BBB939A /* Pods-DialogViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DialogViewDemo-dummy.m"; sourceTree = "<group>"; };
+		FD8FD7BA9D9C6970B176378E20B7434C /* SelectorDialogElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SelectorDialogElement.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B33B26E579993A2693D689CB6ABE4FE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				564F76C9FB1C5E7AE08E2FBDA3E3D3D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCECD74644B095975FE3004AF52C8547 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D479C17DD0213237D749C8DD2A0F9459 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C56212AD02A98A6C2C875E07A6E51DAE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC05234E608E1E1E5CE97D5CAA802CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		007EAF478846C63C4CA8BA4B85E8F01E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E05D217FF753FABEE9D776EC10A1675 /* DialogView */,
+				48905D759D2D4656A11630D27A29AAA6 /* DialogView-DialogView */,
+				3B2EB61618538E6B42D69CBB50DB0D1F /* DialogViewSwift-DialogViewSwift */,
+				21A5A444DB5C831244CC8614B60BB1A3 /* Pods-DialogViewDemo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1907100DEC03BD644AEEBFE57D2942F8 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B0749FAD5D592DA1A76946FC77FFCFB /* DialogView */,
+				73984A2C17D728F44D090C82E947EDEE /* DialogViewSwift */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		24636D561BEC75FAF3DC754A4C84AB90 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				84D38241986D014A10C56A9D6F42EEEE /* DialogViewSwift.debug.xcconfig */,
+				91157DAC0B6C20E62A94C6A834CF8243 /* DialogViewSwift.release.xcconfig */,
+				45B6336CED77836040FD1853BCEF0000 /* ResourceBundle-DialogViewSwift-DialogViewSwift-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../../DialogViewDemo/Pods/Target Support Files/DialogViewSwift";
+			sourceTree = "<group>";
+		};
+		3067B0FA42252F7B2B2D6E54FD0D2D17 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				D38A8913674E78B09811D736D4937515 /* Element */,
+				B88BEB8467D85521B16FBDAF8C9012D9 /* Models */,
+			);
+			name = Basic;
+			path = DialogView/Basic;
+			sourceTree = "<group>";
+		};
+		405821F614A684B571ED321096583196 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				47DAD3DA6E48984846F3CEC480E713A0 /* Dialog.h */,
+				32D500942B39D7A0B1C0D8A87491A74C /* Dialog.m */,
+				96F5E4FBA6BB0450773A47BEC6B18512 /* Dialog+Common.h */,
+				57FE2BC01FE86510D35CFAA959955784 /* Dialog+Common.m */,
+				5BD39D6686A5E6821551A46105A7A37F /* Dialog+CustomView.h */,
+				076F8DA94A2720E244A0C7B0C710CEAE /* Dialog+CustomView.m */,
+				9F99713A04848B3690FE4800A17C2DC1 /* Dialog+Input.h */,
+				4A3C4DE8F500FE35C954E058F86A7BD6 /* Dialog+Input.m */,
+				ED41DF2B1BB6BBAF66B083C1D5051886 /* Dialog+LocalImage.h */,
+				EBDAAD89F242B7E2FA6413D52A284036 /* Dialog+LocalImage.m */,
+				CD1580980228AE82ED51CB24C2F6BDB4 /* Dialog+NetImage.h */,
+				F55F535ABFB89649A3DA9129007CD14F /* Dialog+NetImage.m */,
+				1781D6E17289CE8F1F69CF13997E8CA2 /* Dialog+Selector.h */,
+				79161308000C21DE9CDBF252BD8ED441 /* Dialog+Selector.m */,
+				7EE52B56B5C3CB34CDDB8E5E00630B00 /* Dialog+SpecialColors.h */,
+				5889F72DE10BEFFF6A4A77932671AD0A /* Dialog+SpecialColors.m */,
+				525BA1500CBA5C9ED692F8522556ABF7 /* DialogHeader.h */,
+				41DA261DE182FE8E89FF13293BF297AE /* DialogModelEditor.h */,
+				88F0CE05146370015D76D7226D27FB5E /* DialogModelEditor.m */,
+				35E2A512CA81E939EE3A96B1892B76A7 /* DialogView.h */,
+				894CC30CB49764AD610523A933EEDB2A /* DialogView.m */,
+			);
+			name = Core;
+			path = DialogView/Core;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5B0749FAD5D592DA1A76946FC77FFCFB /* DialogView */ = {
+			isa = PBXGroup;
+			children = (
+				C7D6BD615343671B6102FD9DCF07CEA3 /* DialogView.xcassets */,
+				3067B0FA42252F7B2B2D6E54FD0D2D17 /* Basic */,
+				8C3EDC9A8AD69DC0C79FD1B25E62CBFD /* Categories */,
+				405821F614A684B571ED321096583196 /* Core */,
+				F59F4BFA41C0A3F6A1E428806BAE004B /* DemoFiles */,
+				7561C9CB4FC13E6A7C2302A55317E4CD /* Elements */,
+				65EA4834ACF3998F7E82455CD627E09A /* Models */,
+				DC485A282FC4A41A384A37E5F1FE7777 /* Pod */,
+				B1BDA3F748910E0D6971A2B7D9A11D84 /* Support Files */,
+				B0A7B860FFA6AF4EDD23C59ED7622347 /* Tools */,
+			);
+			name = DialogView;
+			path = ../../LocalPods/DialogView;
+			sourceTree = "<group>";
+		};
+		65EA4834ACF3998F7E82455CD627E09A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0371FA145D38B4E606F1ED53BBD5483 /* ButtonsDialogModel.h */,
+				8737C3E5F80229363489B8A72BCC776D /* ButtonsDialogModel.m */,
+				3E6613C47938BDEDE8F6C2CD8B604E32 /* DialogResult.h */,
+				F349D6062ED8F33B20CEA80795E57835 /* DialogResult.m */,
+				1FC763B9BC4E276281F0FB5115CF6AC2 /* ImageDialogModel.h */,
+				A9470B6D40A3EC35A14EED2393223643 /* ImageDialogModel.m */,
+				D07BF2566CCEC5699D64772124675E6B /* SelectorDialogModel.h */,
+				4673CFA9D0AD3093BDB1C624FE21FBEE /* SelectorDialogModel.m */,
+				C9D03BE66A63FB5950C4005EC5DD9019 /* TextDialogModel.h */,
+				C03EDA582DB32DCA97E0D806B7AD8169 /* TextDialogModel.m */,
+				ADDF631AC1C201F97F0F8C6CEE8CF10F /* TextFieldDialogModel.h */,
+				59614EE4848E9065CE31F181DF550655 /* TextFieldDialogModel.m */,
+				80B8BD35FC3AE9A66976A2D228BE37A7 /* TextShouldChangeResModel.h */,
+				284538A16D952946E0C19B90804B9B81 /* TextShouldChangeResModel.m */,
+				1873C140AB0F14C417F2F51D05583975 /* TextViewDialogModel.h */,
+				47F019DA42447D34637C84997E7B5499 /* TextViewDialogModel.m */,
+			);
+			name = Models;
+			path = DialogView/Models;
+			sourceTree = "<group>";
+		};
+		73984A2C17D728F44D090C82E947EDEE /* DialogViewSwift */ = {
+			isa = PBXGroup;
+			children = (
+				52AEDEBFD3A50B3E04264B0AAE1EA13A /* DialogViewSwift.xcassets */,
+				C738E5524F88488D84C91E02FD9764F0 /* Pod */,
+				24636D561BEC75FAF3DC754A4C84AB90 /* Support Files */,
+			);
+			name = DialogViewSwift;
+			path = ../../LocalPods/DialogViewSwift;
+			sourceTree = "<group>";
+		};
+		7561C9CB4FC13E6A7C2302A55317E4CD /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				57E0D6E91F27BA15C388B58027A06EC9 /* ButtonsDialogElement.h */,
+				91EFFACF12A64CEEE252D224AC03049E /* ButtonsDialogElement.m */,
+				5C023FB2E9CF9C81AA1BA500502A484F /* ImageDialogElement.h */,
+				00066F2F2D4C8DA37C10B148FEF8289E /* ImageDialogElement.m */,
+				FD8FD7BA9D9C6970B176378E20B7434C /* SelectorDialogElement.h */,
+				9EAC3C72A841713E81BBC989C10ADCDD /* SelectorDialogElement.m */,
+				3BCDD56C49FA6C57EBDF140253C7CE97 /* TextDialogElement.h */,
+				77F2F591F0E632174A546F6E79086B51 /* TextDialogElement.m */,
+				D1D63E7A259D86051DD1F00FA300FACE /* TextFieldDialogElement.h */,
+				688912F1171E0FC41804C55C81100B90 /* TextFieldDialogElement.m */,
+				DEF0791DCCEEB807C9D0A56A33A8561E /* TextViewDialogElement.h */,
+				58EA03E2B88EEFD8B9ADDBA3D0C0AB50 /* TextViewDialogElement.m */,
+			);
+			name = Elements;
+			path = DialogView/Elements;
+			sourceTree = "<group>";
+		};
+		88D49BC7B121AC45245E999A85355FFB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8B764DD36A750EC4C0FABFD17E74697 /* Pods-DialogViewDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8C3EDC9A8AD69DC0C79FD1B25E62CBFD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9F317BF2B9E2A7B467A0C1A22ED18298 /* UITextView+Dialog.h */,
+				6A0C4A12A5299503B2751B6CA5EC7045 /* UITextView+Dialog.m */,
+				2E9B01152EAD3D3979B25D4DF46ACCA3 /* UIView+Dialog.h */,
+				F6FD77B6909083AC992D13B497CC9060 /* UIView+Dialog.m */,
+				0B207DAA30D3A804936CBF058AB77A39 /* UIViewController+Dialog.h */,
+				46E005F3007BFD8B6007BB86C04F5764 /* UIViewController+Dialog.m */,
+			);
+			name = Categories;
+			path = DialogView/Categories;
+			sourceTree = "<group>";
+		};
+		B0A7B860FFA6AF4EDD23C59ED7622347 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AA8897DBD2860367FE85EC291D06063D /* DialogTextTool.h */,
+				24EAB195AEB94488472975FF16604027 /* DialogTextTool.m */,
+			);
+			name = Tools;
+			path = DialogView/Tools;
+			sourceTree = "<group>";
+		};
+		B1BDA3F748910E0D6971A2B7D9A11D84 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0BA9B223157C713330757A8A4B34028 /* DialogView.modulemap */,
+				1336BFC7DE2B3F745ED029F625B8212C /* DialogView-dummy.m */,
+				E5D1D4CFAFB4BF239DBD21D3CA749C46 /* DialogView-Info.plist */,
+				00334CB79104F9A3D13C702EDFF4E3AE /* DialogView-prefix.pch */,
+				69CEDEE629BD0D85E85E14BB1AACAFB1 /* DialogView-umbrella.h */,
+				FB18163AD595BBEA49273782F371599B /* DialogView.debug.xcconfig */,
+				28881422F9538607AB3B32A0A31C5F98 /* DialogView.release.xcconfig */,
+				8FF37C7C4B658A653B944B1E1D35946F /* ResourceBundle-DialogView-DialogView-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../../DialogViewDemo/Pods/Target Support Files/DialogView";
+			sourceTree = "<group>";
+		};
+		B88BEB8467D85521B16FBDAF8C9012D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6EFA1143922B67BC8416FD2741F57685 /* BasicDialogModel.h */,
+				ADBA20DCBC815712C55B4208C521BCD6 /* BasicDialogModel.m */,
+			);
+			name = Models;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C738E5524F88488D84C91E02FD9764F0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				DA1713DF0C68642E2FED3AC51F38653F /* DialogViewSwift.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1907100DEC03BD644AEEBFE57D2942F8 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				007EAF478846C63C4CA8BA4B85E8F01E /* Products */,
+				88D49BC7B121AC45245E999A85355FFB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D38A8913674E78B09811D736D4937515 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				A8019EF33C12A22BAFD4F17E473DC4B4 /* BasicDialogElement.h */,
+				22EC87E4D7254618AD881C2162AFF855 /* BasicDialogElement.m */,
+			);
+			name = Element;
+			path = Element;
+			sourceTree = "<group>";
+		};
+		D8B764DD36A750EC4C0FABFD17E74697 /* Pods-DialogViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BBCAB8200A53174AE6A445058B663831 /* Pods-DialogViewDemo.modulemap */,
+				98D1546E8442B6894389BAD2583A83E9 /* Pods-DialogViewDemo-acknowledgements.markdown */,
+				2A6993973F93AF48D9C1AFD97992AF03 /* Pods-DialogViewDemo-acknowledgements.plist */,
+				FD735F3F2952B5054A9CDB1E9BBB939A /* Pods-DialogViewDemo-dummy.m */,
+				EC1F980066EC9F1297581F1E78B5CC7F /* Pods-DialogViewDemo-frameworks.sh */,
+				5427EA9B9A3C387D479AC79EF025035F /* Pods-DialogViewDemo-Info.plist */,
+				114975C57603DEE061E3D39F4FD77C49 /* Pods-DialogViewDemo-resources.sh */,
+				E3B47F0A6573606966C2C2D3A8B664AA /* Pods-DialogViewDemo-umbrella.h */,
+				B348D07896E4FF4B761DFF33A62C6E37 /* Pods-DialogViewDemo.debug.xcconfig */,
+				2308FEFA26953E4B45EAB4D6B0EF272A /* Pods-DialogViewDemo.release.xcconfig */,
+			);
+			name = "Pods-DialogViewDemo";
+			path = "Target Support Files/Pods-DialogViewDemo";
+			sourceTree = "<group>";
+		};
+		DC485A282FC4A41A384A37E5F1FE7777 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3656DDA7677E69B25C4B3A3A0CC94478 /* DialogView.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F59F4BFA41C0A3F6A1E428806BAE004B /* DemoFiles */ = {
+			isa = PBXGroup;
+			children = (
+				980C38A97C300D3D4E48DBA0149F07F6 /* DialogDemoViewController.h */,
+				AC7F55EF5702FDDAAE1C362537F02E3F /* DialogDemoViewController.m */,
+			);
+			name = DemoFiles;
+			path = DialogView/DemoFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		51E97D3348D7E08EE5B4719322EF4D22 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41583C355FE140AB092E9CF79FA58287 /* Pods-DialogViewDemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F617BE661AADD4E8ED34D1A7EE7582B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1947980FAE31D1BB408145186CF87512 /* BasicDialogElement.h in Headers */,
+				86D69E064DAA92C3ABA3FEFEDFD4F99A /* BasicDialogModel.h in Headers */,
+				EAD975C2879AC88B6F37C0DF3CCADEDA /* ButtonsDialogElement.h in Headers */,
+				F7244CE6758E245BB86D4A467D60505B /* ButtonsDialogModel.h in Headers */,
+				98E16356DF87ED08DA09043940E7E981 /* Dialog.h in Headers */,
+				A59B74D51303F99CAAC7126101904335 /* Dialog+Common.h in Headers */,
+				C58F3DBA5AE19AC1E5A16EA78B9A927D /* Dialog+CustomView.h in Headers */,
+				5A10522C4D409706C924F43057D07DEF /* Dialog+Input.h in Headers */,
+				8A9C47E2E10645937F96A1B6E907DAF2 /* Dialog+LocalImage.h in Headers */,
+				61BBC4F9FBCCE2D6672EF4EAB94355D8 /* Dialog+NetImage.h in Headers */,
+				E8F14F8D71AAED03AF83C30A81758EF7 /* Dialog+Selector.h in Headers */,
+				AF78E7D78E0A081D4DA3E9843DB80545 /* Dialog+SpecialColors.h in Headers */,
+				5983B9F105F361ED1FDA31C4D9E2AED8 /* DialogDemoViewController.h in Headers */,
+				9434F18D5903B9670BA85868E87C7E38 /* DialogHeader.h in Headers */,
+				A21699F8B9E9717A3F201D02CA86E58C /* DialogModelEditor.h in Headers */,
+				09BB25A0FB8F34A248FF37319C344801 /* DialogResult.h in Headers */,
+				5BB3DF3D590BB0FC48F23E246FC709A0 /* DialogTextTool.h in Headers */,
+				E18C3FEAE69F384F9BCAAB010B80DA06 /* DialogView.h in Headers */,
+				D575EEA70569722C75254791FDFF5CFD /* DialogView-umbrella.h in Headers */,
+				F26D1D44EF64FA4FA887A0264B456BF8 /* ImageDialogElement.h in Headers */,
+				A84C0EFAA1F6B13C65A19858180D1275 /* ImageDialogModel.h in Headers */,
+				524B44A4922055AC7E53B534265DAF48 /* SelectorDialogElement.h in Headers */,
+				25675250CFEF7623AEAAD1B4CFD8CBBC /* SelectorDialogModel.h in Headers */,
+				F6DA2784DA00F7D441C4EBF9B2BF12B0 /* TextDialogElement.h in Headers */,
+				58954C7A53D1251E7CE81E07E68DB60E /* TextDialogModel.h in Headers */,
+				0301F81D5F3BA3DCCA1C85CF331EB90F /* TextFieldDialogElement.h in Headers */,
+				2EF17DC6CABAB74B18E06147E3B92AC9 /* TextFieldDialogModel.h in Headers */,
+				C500DFB4503347140CEE07A75BBF42E8 /* TextShouldChangeResModel.h in Headers */,
+				C710E8EE82EBD9A5F19C6CA9B7B6DE1C /* TextViewDialogElement.h in Headers */,
+				B52A863F9C40CB72D9AEB4DB8C4DD2C3 /* TextViewDialogModel.h in Headers */,
+				0D747C9713C980CF790C8812BC52EA14 /* UITextView+Dialog.h in Headers */,
+				B72220E485AF12D2924BD532F1167F70 /* UIView+Dialog.h in Headers */,
+				00F1C3641E81C118B25C58F1470D2750 /* UIViewController+Dialog.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		15B2E677CB0DD1A6CD73E224DC9D1AF6 /* DialogView-DialogView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA421672F8A3ED4752671BF5FC7E8A2 /* Build configuration list for PBXNativeTarget "DialogView-DialogView" */;
+			buildPhases = (
+				BEBCD5575C00391FCC324F8DBC61B096 /* Sources */,
+				CCECD74644B095975FE3004AF52C8547 /* Frameworks */,
+				E6AC31BDB7D749A2B65FBAAED9AA00A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DialogView-DialogView";
+			productName = DialogView;
+			productReference = 48905D759D2D4656A11630D27A29AAA6 /* DialogView-DialogView */;
+			productType = "com.apple.product-type.bundle";
+		};
+		3B48D38C4FB0509486CB9409C51B2A6E /* DialogView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A0D27EB99B93513C3A4873DE6FB75B6 /* Build configuration list for PBXNativeTarget "DialogView" */;
+			buildPhases = (
+				F617BE661AADD4E8ED34D1A7EE7582B6 /* Headers */,
+				D11651CC6B4C098D17A5E44C59E0C53B /* Sources */,
+				B33B26E579993A2693D689CB6ABE4FE4 /* Frameworks */,
+				E8D6932B8F6ABC7C2ADD722089F70E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFA056BDBC140D130F71A9D147FA0423 /* PBXTargetDependency */,
+			);
+			name = DialogView;
+			productName = DialogView;
+			productReference = 3E05D217FF753FABEE9D776EC10A1675 /* DialogView */;
+			productType = "com.apple.product-type.framework";
+		};
+		58CA11A26BD447042DE1A62A0D3B48D2 /* DialogViewSwift-DialogViewSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AA89F148672D9275165509682A5E4B3 /* Build configuration list for PBXNativeTarget "DialogViewSwift-DialogViewSwift" */;
+			buildPhases = (
+				2FF5D41207E92156D2857D810AC16A7D /* Sources */,
+				DCC05234E608E1E1E5CE97D5CAA802CF /* Frameworks */,
+				4FFEEA17498E2384C55941519DC68BC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DialogViewSwift-DialogViewSwift";
+			productName = DialogViewSwift;
+			productReference = 3B2EB61618538E6B42D69CBB50DB0D1F /* DialogViewSwift-DialogViewSwift */;
+			productType = "com.apple.product-type.bundle";
+		};
+		D0BFBF76EA317F955C2E1B2F3703F04E /* Pods-DialogViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C18FDCACE69DBCA833E682F818C4DF22 /* Build configuration list for PBXNativeTarget "Pods-DialogViewDemo" */;
+			buildPhases = (
+				51E97D3348D7E08EE5B4719322EF4D22 /* Headers */,
+				B6D1666D79835D684A0D023D54EFB48A /* Sources */,
+				D479C17DD0213237D749C8DD2A0F9459 /* Frameworks */,
+				68702C2439B037534561324FCDA5DB50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83660FBC6399150DA26A62ED30CBF366 /* PBXTargetDependency */,
+				388A67C22259BE2600C4186DF925EDF5 /* PBXTargetDependency */,
+			);
+			name = "Pods-DialogViewDemo";
+			productName = Pods_DialogViewDemo;
+			productReference = 21A5A444DB5C831244CC8614B60BB1A3 /* Pods-DialogViewDemo */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 007EAF478846C63C4CA8BA4B85E8F01E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B48D38C4FB0509486CB9409C51B2A6E /* DialogView */,
+				15B2E677CB0DD1A6CD73E224DC9D1AF6 /* DialogView-DialogView */,
+				DEB6F297460DA52F6902D133B5AEA1BC /* DialogViewSwift */,
+				58CA11A26BD447042DE1A62A0D3B48D2 /* DialogViewSwift-DialogViewSwift */,
+				D0BFBF76EA317F955C2E1B2F3703F04E /* Pods-DialogViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FFEEA17498E2384C55941519DC68BC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B573B778BA1029BADEE0E2AFFABDDA1E /* DialogViewSwift.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68702C2439B037534561324FCDA5DB50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6AC31BDB7D749A2B65FBAAED9AA00A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6D9CD2BC4A00B09A9F26C5342D7C73 /* DialogView.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D6932B8F6ABC7C2ADD722089F70E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71572F2221EF33C3C7AE6C85208A3D37 /* DialogView-DialogView in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FF5D41207E92156D2857D810AC16A7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D1666D79835D684A0D023D54EFB48A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F00DF50C13D0A2B732B04D4BDDFC3B /* Pods-DialogViewDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEBCD5575C00391FCC324F8DBC61B096 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D11651CC6B4C098D17A5E44C59E0C53B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39BDA1C7AF18C11D5113568E3548D451 /* BasicDialogElement.m in Sources */,
+				1345FB2DB1C17B49CB1B1757301E823C /* BasicDialogModel.m in Sources */,
+				8F18952A10588BCD39CB4DE37A4CB2FF /* ButtonsDialogElement.m in Sources */,
+				A6418AD7980610B4B5241D836757DA17 /* ButtonsDialogModel.m in Sources */,
+				CF4E2EFF6B254C8B5B1D378F5B8A9370 /* Dialog.m in Sources */,
+				BFD2210AF405617D9859AD7F37E2AFA7 /* Dialog+Common.m in Sources */,
+				1C97EB39882F7E1ADBCC6FCD2D8DB0C4 /* Dialog+CustomView.m in Sources */,
+				ADC4BF0CD76B8EF1624E9C4F86D379B4 /* Dialog+Input.m in Sources */,
+				3203CDE3B467FB93A5B9EF200928DCEE /* Dialog+LocalImage.m in Sources */,
+				3C90D2770B21AB4F960F9DF9D9A0D686 /* Dialog+NetImage.m in Sources */,
+				89DA4D1C4123B81FDEC3B58A32339842 /* Dialog+Selector.m in Sources */,
+				963CC668E2B272D35BAF6B8C86DF99DC /* Dialog+SpecialColors.m in Sources */,
+				7EA4777088C786C6CBA28F4066AF387A /* DialogDemoViewController.m in Sources */,
+				5EE91FAC54F7B3E284D08810715C7274 /* DialogModelEditor.m in Sources */,
+				9D7959C15A5FEA0A6DCEB83466D3F1BE /* DialogResult.m in Sources */,
+				986475B8A20E01DB403368BA536A0345 /* DialogTextTool.m in Sources */,
+				F941B844AEDCD6782E443DC9390E0FF8 /* DialogView.m in Sources */,
+				66ACA3E14FE4DAC87B6706FFD6574418 /* DialogView-dummy.m in Sources */,
+				B910CB27A231271FED428445CFF68665 /* ImageDialogElement.m in Sources */,
+				630781D3B0A01C0C97D1EDD51DDD6160 /* ImageDialogModel.m in Sources */,
+				BDFC9E461A54C02A52E47E8A83E33743 /* SelectorDialogElement.m in Sources */,
+				FAD29D325A51597D350F5D7EB3352A15 /* SelectorDialogModel.m in Sources */,
+				1A79E4DC453CC112306B26FEC8FFD1A0 /* TextDialogElement.m in Sources */,
+				A02C1209A5643461575C1E545DE51DF6 /* TextDialogModel.m in Sources */,
+				7872A0AA4E788D14DA0750C66C66FC46 /* TextFieldDialogElement.m in Sources */,
+				96BC20BA02104E1C21405F2F7C747B93 /* TextFieldDialogModel.m in Sources */,
+				77A3B9D7D6C516E3452D1A955BDF4877 /* TextShouldChangeResModel.m in Sources */,
+				896C3992B000AF87832187FD0B9154E1 /* TextViewDialogElement.m in Sources */,
+				27B41FA5385B11B76F4CFA5F829D855B /* TextViewDialogModel.m in Sources */,
+				76CD35D969ECA574F37830C764EE23E4 /* UITextView+Dialog.m in Sources */,
+				98EF4B24085EE7960D6604AE33B70724 /* UIView+Dialog.m in Sources */,
+				21331E1EB562497500BBF5BC3DBCFA3C /* UIViewController+Dialog.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		388A67C22259BE2600C4186DF925EDF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DialogViewSwift;
+			target = DEB6F297460DA52F6902D133B5AEA1BC /* DialogViewSwift */;
+			targetProxy = BA6BB9F98855A18E5732F73524452C8D /* PBXContainerItemProxy */;
+		};
+		83660FBC6399150DA26A62ED30CBF366 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DialogView;
+			target = 3B48D38C4FB0509486CB9409C51B2A6E /* DialogView */;
+			targetProxy = A0678E6578CF0072301F9CDEC37E325D /* PBXContainerItemProxy */;
+		};
+		D053A366B681917055A5DD0FABD7499F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DialogViewSwift-DialogViewSwift";
+			target = 58CA11A26BD447042DE1A62A0D3B48D2 /* DialogViewSwift-DialogViewSwift */;
+			targetProxy = 6B1A0A147C187DB751C6BFECB3379453 /* PBXContainerItemProxy */;
+		};
+		FFA056BDBC140D130F71A9D147FA0423 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DialogView-DialogView";
+			target = 15B2E677CB0DD1A6CD73E224DC9D1AF6 /* DialogView-DialogView */;
+			targetProxy = 36ACE1E58E5F3A37ED431E2ED82F98DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		2DEABF8348D68EC0E7EB2E75189BA01C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28881422F9538607AB3B32A0A31C5F98 /* DialogView.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DialogView";
+				IBSC_MODULE = DialogView;
+				INFOPLIST_FILE = "Target Support Files/DialogView/ResourceBundle-DialogView-DialogView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = DialogView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		5CF055AB0A5B3A0E37624145FAEF8FF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB18163AD595BBEA49273782F371599B /* DialogView.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DialogView/DialogView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DialogView/DialogView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DialogView/DialogView.modulemap";
+				PRODUCT_MODULE_NAME = DialogView;
+				PRODUCT_NAME = DialogView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5E12EF08B0170DF6B2CBC22D5CF6042C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2308FEFA26953E4B45EAB4D6B0EF272A /* Pods-DialogViewDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DialogViewDemo/Pods-DialogViewDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DialogViewDemo/Pods-DialogViewDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		888745539A8CA60EC1D40B1A68733E50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D38241986D014A10C56A9D6F42EEEE /* DialogViewSwift.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DialogViewSwift";
+				IBSC_MODULE = DialogViewSwift;
+				INFOPLIST_FILE = "Target Support Files/DialogViewSwift/ResourceBundle-DialogViewSwift-DialogViewSwift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = DialogViewSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		99F9ED46F69C699451EB0ADA1F9BA8F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B348D07896E4FF4B761DFF33A62C6E37 /* Pods-DialogViewDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DialogViewDemo/Pods-DialogViewDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DialogViewDemo/Pods-DialogViewDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9ED527A409EB7AB207AD203EEA7437A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91157DAC0B6C20E62A94C6A834CF8243 /* DialogViewSwift.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DialogViewSwift";
+				IBSC_MODULE = DialogViewSwift;
+				INFOPLIST_FILE = "Target Support Files/DialogViewSwift/ResourceBundle-DialogViewSwift-DialogViewSwift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = DialogViewSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		BB7FA39F0247ABE41A082135C2851D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB18163AD595BBEA49273782F371599B /* DialogView.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DialogView";
+				IBSC_MODULE = DialogView;
+				INFOPLIST_FILE = "Target Support Files/DialogView/ResourceBundle-DialogView-DialogView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = DialogView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		CB1D5ABA820008711E33F4DBA67749B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28881422F9538607AB3B32A0A31C5F98 /* DialogView.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DialogView/DialogView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DialogView/DialogView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DialogView/DialogView.modulemap";
+				PRODUCT_MODULE_NAME = DialogView;
+				PRODUCT_NAME = DialogView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EFC835E852F319B9EFA890D998099A68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91157DAC0B6C20E62A94C6A834CF8243 /* DialogViewSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6A7285FF3823BCA9263F4D4F9C23DBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D38241986D014A10C56A9D6F42EEEE /* DialogViewSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A0D27EB99B93513C3A4873DE6FB75B6 /* Build configuration list for PBXNativeTarget "DialogView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CF055AB0A5B3A0E37624145FAEF8FF7 /* Debug */,
+				CB1D5ABA820008711E33F4DBA67749B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AA89F148672D9275165509682A5E4B3 /* Build configuration list for PBXNativeTarget "DialogViewSwift-DialogViewSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888745539A8CA60EC1D40B1A68733E50 /* Debug */,
+				9ED527A409EB7AB207AD203EEA7437A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CA421672F8A3ED4752671BF5FC7E8A2 /* Build configuration list for PBXNativeTarget "DialogView-DialogView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB7FA39F0247ABE41A082135C2851D86 /* Debug */,
+				2DEABF8348D68EC0E7EB2E75189BA01C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DEA8E8D1F09799709BDC16FD330B376 /* Build configuration list for PBXAggregateTarget "DialogViewSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6A7285FF3823BCA9263F4D4F9C23DBC /* Debug */,
+				EFC835E852F319B9EFA890D998099A68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C18FDCACE69DBCA833E682F818C4DF22 /* Build configuration list for PBXNativeTarget "Pods-DialogViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99F9ED46F69C699451EB0ADA1F9BA8F0 /* Debug */,
+				5E12EF08B0170DF6B2CBC22D5CF6042C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

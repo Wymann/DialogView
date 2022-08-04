@@ -1,0 +1,21 @@
+PODS:
+  - DialogView (1.0.1)
+  - DialogViewSwift (1.0.1)
+
+DEPENDENCIES:
+  - DialogView (from `../LocalPods/DialogView`)
+  - DialogViewSwift (from `../LocalPods/DialogViewSwift`)
+
+EXTERNAL SOURCES:
+  DialogView:
+    :path: "../LocalPods/DialogView"
+  DialogViewSwift:
+    :path: "../LocalPods/DialogViewSwift"
+
+SPEC CHECKSUMS:
+  DialogView: b48c80052f1e1c007537c3b1df5faddaabc921f0
+  DialogViewSwift: 9d435e7be8f26fd226de0baeec2f2502589e4d9a
+
+PODFILE CHECKSUM: 5d44000c0a0437941711c3f7ffc833896bbf01c1
+
+COCOAPODS: 1.11.3
