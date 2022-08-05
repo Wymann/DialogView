@@ -30,6 +30,7 @@
 #import "DialogModelEditor.h"
 #import "DialogView.h"
 #import "DialogDemoViewController.h"
+#import "DialogSettingsViewController.h"
 #import "ButtonsDialogElement.h"
 #import "ImageDialogElement.h"
 #import "SelectorDialogElement.h"

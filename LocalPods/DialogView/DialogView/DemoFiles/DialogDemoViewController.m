@@ -6,6 +6,7 @@
 //
 
 #import "DialogDemoViewController.h"
+#import "DialogSettingsViewController.h"
 
 #import "DialogHeader.h"
 
@@ -58,6 +59,16 @@ typedef NS_ENUM(NSInteger, DialogType) {
     self.tableView.dataSource = self;
 
     self.navigationItem.title = @"Dialog 示例";
+    
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(clickRightBarButtonItem)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+}
+
+#pragma mark - Target Methods
+
+- (void)clickRightBarButtonItem {
+    DialogSettingsViewController *settings = [[DialogSettingsViewController alloc] init];
+    [self.navigationController pushViewController:settings animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

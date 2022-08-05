@@ -5,6 +5,9 @@
 //  Created by huaizhang.chen on 2022/8/4.
 //
 
+#import <DialogView/DialogDemoViewController.h>
+#import <DialogView/DialogSettingsViewController.h>
+
 #import "HomeViewController.h"
 
 static NSString *const homeReuseIdentifier = @"HomeViewCell";
@@ -59,13 +62,21 @@ static NSString *const homeReuseIdentifier = @"HomeViewCell";
     }
     
     cell.textLabel.font = [UIFont systemFontOfSize:16.0];
-    cell.textLabel.text = indexPath.row == 0 ? @"Objective-C" : @"Swift";
+    cell.textLabel.text = indexPath.row == 0 ? @"Dialog 全局设置" : @"Dialog 详细示例";
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == 0) {
+        DialogSettingsViewController *settings = [[DialogSettingsViewController alloc] init];
+        [self.navigationController pushViewController:settings animated:YES];
+    } else {
+        DialogDemoViewController *demoVC = [[DialogDemoViewController alloc] init];
+        [self.navigationController pushViewController:demoVC animated:YES];
+    }
 }
 
 @end
