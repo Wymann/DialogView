@@ -8,10 +8,8 @@
 
 #import "TextFieldDialogElement.h"
 
-#import "UIFont+TCLHUI.h"
+#import "UIFont+Dialog.h"
 
-#define DefaultTextColor @"#000000"               // 默认文本颜色
-#define LineColor @"#666666"                      // 默认线条颜色
 static const CGFloat DefaultFontSize = 14.0;      // 默认字体大小
 static const CGFloat DefaultElementHeight = 68.0; // 默认高度
 static const CGFloat ErrorLabelHeight = 24.0;
@@ -40,28 +38,25 @@ static const CGFloat ErrorLabelHeight = 24.0;
     self.textField.frame = CGRectMake(X, Y, W, H);
     [self addSubview:self.textField];
 
-    NSString *textColor = textFieldModel.textColor.length > 0 ? textFieldModel.textColor : DefaultTextColor;
     CGFloat fontSize = textFieldModel.fontSize > 0 ? textFieldModel.fontSize : DefaultFontSize;
 
     if (textFieldModel.placeHolderContent.length > 0) {
         NSMutableAttributedString *attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:textFieldModel.placeHolderContent];
         [attributedPlaceholder addAttribute:NSFontAttributeName
-                                      value:[UIFont fontForGothamBookWithSize:fontSize]
+                                      value:[UIFont dialog_normalFontWithFontSize:fontSize]
                                       range:NSMakeRange(0, textFieldModel.placeHolderContent.length)];
         [attributedPlaceholder addAttribute:NSForegroundColorAttributeName
-                                      value:[UIColor tclh_colorWithHexString:textColor alpha:0.4]
+                                      value:[textFieldModel.textColor colorWithAlphaComponent:0.4]
                                       range:NSMakeRange(0, textFieldModel.placeHolderContent.length)];
         self.textField.attributedPlaceholder = attributedPlaceholder;
     }
 
-    self.textField.textColor = [UIColor tclh_colorWithHexString:textColor];
+    self.textField.textColor = textFieldModel.textColor;
     self.textField.text = textFieldModel.textContent;
     self.textField.textAlignment = textFieldModel.textAlignment;
-    self.textField.font = [UIFont fontForGothamBookWithSize:fontSize];
+    self.textField.font = [UIFont dialog_normalFontWithFontSize:fontSize];
     self.textField.keyboardType = textFieldModel.keyboardType;
-    if (textFieldModel.tintColor.length > 0) {
-        self.textField.tintColor = [UIColor tclh_colorWithHexString:textFieldModel.tintColor];
-    }
+    self.textField.tintColor = textFieldModel.tintColor;
 
     self.errorLabel.frame = CGRectMake(X, CGRectGetMaxY(self.textField.frame), W, ErrorLabelHeight);
     [self addSubview:self.errorLabel];
@@ -72,7 +67,7 @@ static const CGFloat ErrorLabelHeight = 24.0;
     if (!_textField) {
         _textField = [[UITextField alloc] init];
         _textField.layer.cornerRadius = 4.0;
-        _textField.backgroundColor = [UIColor tclh_colorWithHexString:@"#ECECEC"];
+        _textField.backgroundColor = [UIColor dialog_colorWithHexString:@"#ECECEC"];
         UIView *leftView = [[UIView alloc] init];
         CGRect frame;
         frame.size.width = 10;
@@ -86,8 +81,8 @@ static const CGFloat ErrorLabelHeight = 24.0;
 - (UILabel *)errorLabel {
     if (!_errorLabel) {
         _errorLabel = [[UILabel alloc] init];
-        _errorLabel.textColor = [UIColor tclh_colorWithHexString:@"#FF4747"];
-        _errorLabel.font = [UIFont fontForGothamBookWithSize:12];
+        _errorLabel.textColor = [UIColor dialog_colorWithHexString:@"#FF4747"];
+        _errorLabel.font = [UIFont dialog_normalFontWithFontSize:12];
     }
     return _errorLabel;
 }

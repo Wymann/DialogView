@@ -15,7 +15,7 @@
     _model = model;
 
     NSString *bgColor = _model.bgColor.length > 0 ? _model.bgColor : @"#FFFFFF";
-    self.backgroundColor = [UIColor tclh_colorWithHexString:bgColor];
+    self.backgroundColor = [UIColor dialog_colorWithHexString:bgColor];
     self.layer.cornerRadius = _model.cornerRadius;
     self.clipsToBounds = YES;
 }

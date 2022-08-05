@@ -8,6 +8,7 @@
 
 
 #import "Dialog.h"
+#import "DialogConfig.h"
 
 #import "Dialog+Common.h"
 #import "Dialog+CustomView.h"

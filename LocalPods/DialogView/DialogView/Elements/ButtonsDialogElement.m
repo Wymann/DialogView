@@ -8,7 +8,7 @@
 
 #import "ButtonsDialogElement.h"
 
-#import "UIFont+TCLHUI.h"
+#import "UIFont+Dialog.h"
 
 #define DefaultTextColor @"#000000"          // 默认文本颜色
 #define LineColor @"#DDDDDD"                 // 默认线条颜色
@@ -61,10 +61,10 @@ static const NSInteger basicButtonTag = 777;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(0, i * ButtonHeight, buttonWidth, ButtonHeight);
         [button setTitle:title forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor tclh_colorWithHexString:textColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor tclh_colorWithHexString:textColor alpha:0.5] forState:UIControlStateHighlighted];
-        [button setTitleColor:[UIColor tclh_colorWithHexString:textColor alpha:0.3] forState:UIControlStateDisabled];
-        button.titleLabel.font = buttonsModel.bold ? [UIFont fontForGothamMediumWithSize:fontSize] : [UIFont fontForGothamBookWithSize:fontSize];
+        [button setTitleColor:[UIColor dialog_colorWithHexString:textColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor dialog_colorWithHexString:textColor alpha:0.5] forState:UIControlStateHighlighted];
+        [button setTitleColor:[UIColor dialog_colorWithHexString:textColor alpha:0.3] forState:UIControlStateDisabled];
+        button.titleLabel.font = buttonsModel.bold ? [UIFont dialog_boldFontWithFontSize:fontSize] : [UIFont dialog_normalFontWithFontSize:fontSize];
         [self addSubview:button];
         button.tag = basicButtonTag + i;
 
@@ -73,13 +73,13 @@ static const NSInteger basicButtonTag = 777;
         if (i != buttonsModel.buttonTitles.count - 1) {
             CALayer *bottomLine = [[CALayer alloc] init];
             bottomLine.frame = CGRectMake(0, floor(ButtonHeight - LineHeight), CGRectGetWidth(button.frame), LineHeight);
-            bottomLine.backgroundColor = [UIColor tclh_colorWithHexString:LineColor].CGColor;
+            bottomLine.backgroundColor = [UIColor dialog_colorWithHexString:LineColor].CGColor;
             [button.layer addSublayer:bottomLine];
 
             if (i == 0) {
                 CALayer *topLine = [[CALayer alloc] init];
                 topLine.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), LineHeight);
-                topLine.backgroundColor = [UIColor tclh_colorWithHexString:LineColor].CGColor;
+                topLine.backgroundColor = [UIColor dialog_colorWithHexString:LineColor].CGColor;
                 [button.layer addSublayer:topLine];
             }
         }
@@ -103,10 +103,10 @@ static const NSInteger basicButtonTag = 777;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(floor(i * buttonWidth), 0, buttonWidth, ButtonHeight);
         [button setTitle:title forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor tclh_colorWithHexString:textColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor tclh_colorWithHexString:textColor alpha:0.5] forState:UIControlStateHighlighted];
-        [button setTitleColor:[UIColor tclh_colorWithHexString:textColor alpha:0.3] forState:UIControlStateDisabled];
-        button.titleLabel.font = buttonsModel.bold ? [UIFont fontForGothamMediumWithSize:fontSize] : [UIFont fontForGothamBookWithSize:fontSize];
+        [button setTitleColor:[UIColor dialog_colorWithHexString:textColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor dialog_colorWithHexString:textColor alpha:0.5] forState:UIControlStateHighlighted];
+        [button setTitleColor:[UIColor dialog_colorWithHexString:textColor alpha:0.3] forState:UIControlStateDisabled];
+        button.titleLabel.font = buttonsModel.bold ? [UIFont dialog_boldFontWithFontSize:fontSize] : [UIFont dialog_normalFontWithFontSize:fontSize];
         [self addSubview:button];
         button.tag = basicButtonTag + i;
 
@@ -115,14 +115,14 @@ static const NSInteger basicButtonTag = 777;
         if (i != buttonsModel.buttonTitles.count - 1) {
             CALayer *rightLine = [[CALayer alloc] init];
             rightLine.frame = CGRectMake(floor(buttonWidth - LineHeight), 0, LineHeight, ButtonHeight);
-            rightLine.backgroundColor = [UIColor tclh_colorWithHexString:LineColor].CGColor;
+            rightLine.backgroundColor = [UIColor dialog_colorWithHexString:LineColor].CGColor;
             [button.layer addSublayer:rightLine];
         }
     }
 
     CALayer *topLine = [[CALayer alloc] init];
     topLine.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), LineHeight);
-    topLine.backgroundColor = [UIColor tclh_colorWithHexString:LineColor].CGColor;
+    topLine.backgroundColor = [UIColor dialog_colorWithHexString:LineColor].CGColor;
     [self.layer addSublayer:topLine];
 }
 

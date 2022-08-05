@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 行间距
 @property (nonatomic, assign) CGFloat lineSpace;
 /// 文本颜色
-@property (nonatomic, copy) NSString *textColor;
+@property (nonatomic, strong) UIColor *textColor;
 /// 富文本数组
 @property (nonatomic, strong) NSArray *richText;
 /// 文本四周边距

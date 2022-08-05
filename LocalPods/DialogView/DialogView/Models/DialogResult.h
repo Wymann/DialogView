@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *inputText; //输入框文字
 
 #pragma mark - Selector Result
-@property (nonatomic, strong) NSArray<NSNumber *> *selectedIndexs;
+@property (nonatomic, strong) NSArray<NSNumber *> *selectedIndexes;
 @property (nonatomic, strong) NSArray<SelectorDialogItem *> *selectedItems;
 
 @end

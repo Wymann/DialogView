@@ -16,14 +16,6 @@
 #import "TextFieldDialogModel.h"
 #import "TextViewDialogModel.h"
 
-static const CGFloat DialogLeftGap = 24.0;
-static const CGFloat DialogRightGap = 24.0;
-static const CGFloat DialogTopGapWithTile = 24.0;
-static const CGFloat DialogTopGapWithNoneTile = 36.0;
-static const CGFloat DialogBottomGap = 24.0; //除去底部button
-static const CGFloat DialogVGap = 8.0;
-
-
 @interface DialogModelEditor : NSObject
 
 + (TextDialogModel *)createTextDialogModelWithTitle:(NSString *)title titleColor:(NSString *)titleColor;

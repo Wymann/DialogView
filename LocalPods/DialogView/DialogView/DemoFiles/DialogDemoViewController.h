@@ -6,12 +6,12 @@
 //  Copyright © 2020 TCL Electronics Holdings Ltd. All rights reserved.
 //
 
-#import "TlifeBaseViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface DialogDemoViewController : TlifeBaseViewController
+@interface DialogDemoViewController : UIViewController
 
 @end
 

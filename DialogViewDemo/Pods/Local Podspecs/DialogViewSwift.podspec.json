@@ -16,8 +16,8 @@
     "tag": "1.0.1"
   },
   "source_files": [
-    "DialogViewSwift/**/*.swift",
-    "DialogViewSwift/**/**/*.swift"
+    "DialogViewSwift/**/*.{swift}",
+    "DialogViewSwift/**/**/*.{swift}"
   ],
   "resource_bundles": {
     "DialogViewSwift": [

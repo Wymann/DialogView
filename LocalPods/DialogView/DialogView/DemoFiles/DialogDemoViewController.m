@@ -9,7 +9,7 @@
 
 #import "DialogHeader.h"
 
-#import "UIFont+TCLHUI.h"
+#import "UIFont+Dialog.h"
 
 typedef NS_ENUM(NSInteger, DialogType) {
     DialogTypeCommon1 = 0,            // 普通弹框 点击空白处消失
@@ -75,9 +75,9 @@ typedef NS_ENUM(NSInteger, DialogType) {
     }
 
     cell.textLabel.textColor = [UIColor blackColor];
-    cell.textLabel.font = [UIFont fontForGothamBookWithSize:15.0];
+    cell.textLabel.font = [UIFont dialog_normalFontWithFontSize:15.0];
     cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-    cell.detailTextLabel.font = [UIFont fontForGothamBookWithSize:13.0];
+    cell.detailTextLabel.font = [UIFont dialog_normalFontWithFontSize:13.0];
     cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
@@ -352,7 +352,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
         case DialogTypeCustomView: {
             UILabel *customView = [[UILabel alloc] init];
             customView.text = @"这是一个自定义视图";
-            customView.font = [UIFont fontForGothamMediumWithSize:17.0];
+            customView.font = [UIFont dialog_boldFontWithFontSize:17.0];
             customView.backgroundColor = [UIColor whiteColor];
             customView.textColor = [UIColor redColor];
             customView.textAlignment = NSTextAlignmentCenter;
@@ -371,7 +371,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
                                @"啦啦啦啦啦大发大发 啥地方\n2: 啦啦啦啦啦\n3: 啦啦啦啦啦点点滴滴\n4: 啦啦啦啦啦大发大发 啥地方\n2: 啦啦啦啦啦\n3: "
                                @"啦啦啦啦啦点点滴滴\n4: 啦啦啦啦啦大发大发 啥地方\n2: 啦啦啦啦啦\n3: 啦啦啦啦啦点点滴滴\n4: 啦啦啦啦啦大发大发 啥地方"];
             [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0, attributedString.string.length)];
-            [attributedString addAttribute:NSFontAttributeName value:[UIFont fontForGothamBookWithSize:14.0] range:NSMakeRange(0, attributedString.string.length)];
+            [attributedString addAttribute:NSFontAttributeName value:[UIFont dialog_normalFontWithFontSize:14.0] range:NSMakeRange(0, attributedString.string.length)];
             [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor]
                                      range:[attributedString.string rangeOfString:@"《TCL*****协议》"]];
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -395,7 +395,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
             //                               @"啦啦啦啦啦大发大发 啥地方\n2: 啦啦啦啦啦\n3: 啦啦啦啦啦点点滴滴\n4: 啦啦啦啦啦大发大发 啥地方\n2: 啦啦啦啦啦\n3: "
             //                               @"啦啦啦啦啦点点滴滴\n4: 啦啦啦啦啦大发大发 啥地方\n2: 啦啦啦啦啦\n3: 啦啦啦啦啦点点滴滴\n4: 啦啦啦啦啦大发大发 啥地方"];
             //            [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0, attributedString.string.length)];
-            //            [attributedString addAttribute:NSFontAttributeName value:[UIFont fontForGothamBookWithSize:14.0] range:NSMakeRange(0, attributedString.string.length)];
+            //            [attributedString addAttribute:NSFontAttributeName value:[UIFont dialog_normalFontWithFontSize:14.0] range:NSMakeRange(0, attributedString.string.length)];
             //            [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor]
             //                                     range:[attributedString.string rangeOfString:@"《TCL*****协议》"]];
             //            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -433,8 +433,8 @@ typedef NS_ENUM(NSInteger, DialogType) {
         case DialogTypeLocalImageTop: {
             NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]
                 initWithString:@"1、App启动速度性能提升\n2、优化设备配网速度提升\n3、更多福利活动体验优化"];
-            [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor tclh_colorWithHexString:@"#2D3132"] range:NSMakeRange(0, attributedString.string.length)];
-            [attributedString addAttribute:NSFontAttributeName value:[UIFont fontForGothamBookWithSize:16.0] range:NSMakeRange(0, attributedString.string.length)];
+            [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor dialog_colorWithHexString:@"#2D3132"] range:NSMakeRange(0, attributedString.string.length)];
+            [attributedString addAttribute:NSFontAttributeName value:[UIFont dialog_normalFontWithFontSize:16.0] range:NSMakeRange(0, attributedString.string.length)];
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
             [paragraphStyle setLineSpacing:6];
             [paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
@@ -574,7 +574,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
                                     resultBlock:^BOOL(DialogResult *_Nonnull result) {
                                         DIALOG_LOG(@"点击了第 %ld 个按钮：%@", result.buttonIndex, result.buttonTitle);
                                         DIALOG_LOG(@"items:%@", result.selectedItems);
-                                        DIALOG_LOG(@"indexs:%@", result.selectedIndexs);
+                                        DIALOG_LOG(@"indexs:%@", result.selectedIndexes);
                                         return YES;
                                     }];
         } break;
@@ -596,7 +596,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
                                     resultBlock:^BOOL(DialogResult *_Nonnull result) {
                                         DIALOG_LOG(@"点击了第 %ld 个按钮：%@", result.buttonIndex, result.buttonTitle);
                                         DIALOG_LOG(@"items:%@", result.selectedItems);
-                                        DIALOG_LOG(@"indexs:%@", result.selectedIndexs);
+                                        DIALOG_LOG(@"indexs:%@", result.selectedIndexes);
                                         return YES;
                                     }];
         } break;
@@ -621,7 +621,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
                                     resultBlock:^BOOL(DialogResult *_Nonnull result) {
                                         DIALOG_LOG(@"点击了第 %ld 个按钮：%@", result.buttonIndex, result.buttonTitle);
                                         DIALOG_LOG(@"items:%@", result.selectedItems);
-                                        DIALOG_LOG(@"indexs:%@", result.selectedIndexs);
+                                        DIALOG_LOG(@"indexs:%@", result.selectedIndexes);
                                         return YES;
                                     }];
         } break;

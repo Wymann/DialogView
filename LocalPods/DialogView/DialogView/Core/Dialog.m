@@ -255,7 +255,7 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
 
 /// 绑定弹框与控制器
 + (void)bindWithDialogView:(DialogView *)dialogView viewController:(UIViewController *)viewController {
-    dialogView.bindedViewController = viewController;
+    dialogView.boundViewController = viewController;
 }
 
 #pragma mark - Private Methods
@@ -304,7 +304,7 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
 - (void)insertPriorityArray:(NSMutableArray<DialogPriorityModel *> *)priorityArray withPriorityModel:(DialogPriorityModel *)priorityModel {
     @synchronized(self) {
         if (self.currentPriorityModel && self.currentPriorityModel.isEndDialog) {
-            [priorityModel.dialogView closeDialogViewWithAnimation:NO holdInQueue:NO];
+            [priorityModel.dialogView closeWithAnimation:NO holdInQueue:NO];
             return;
         }
 
@@ -314,7 +314,7 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
 
         __weak typeof(self) weakSelf = self;
         __weak typeof(priorityModel) weakPriorityModel = priorityModel;
-        [priorityModel.dialogView setUpMainUnholdInQueueBlock:^{
+        [priorityModel.dialogView setUpMainReleaseFromQueueBlock:^{
             [weakSelf deletePriorityModel:weakPriorityModel];
             weakSelf.currentPriorityModel = nil;
             [weakSelf checkCurrentPriorityModel];
@@ -356,7 +356,7 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
                         if (self.currentPriorityModel) {
                             self.currentPriorityModel.displayed = YES;
 
-                            [self.currentPriorityModel.dialogView closeDialogViewWithHoldInQueue:!self.currentPriorityModel.isShowOnce];
+                            [self.currentPriorityModel.dialogView closeWithHoldInQueue:!self.currentPriorityModel.isShowOnce];
 
                             if (self.currentPriorityModel.isNeedWaitInQueue && !self.currentPriorityModel.isShowOnce) {
                                 [self.currentPriorityModel startCountTimeInQueue];
@@ -375,13 +375,13 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
                             [priorityModel startCountTimeOnShow];
 
                             priorityModel.timeOnShowBlock = ^(DialogView *dialogView) {
-                                [dialogView closeDialogViewWithAnimation:YES holdInQueue:NO];
+                                [dialogView closeWithAnimation:YES holdInQueue:NO];
                             };
                         }
 
-                        [self deleteUnexistPriority];
+                        [self deleteNonexistentPriority];
 
-                        [priorityModel.dialogView showDialogView];
+                        [priorityModel.dialogView show];
 
                         self.currentPriorityModel = priorityModel;
 
@@ -403,8 +403,8 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
             DialogPriorityModel *model = [priorityArray firstObject];
 
             BOOL passed = YES;
-            if (model.dialogView.bindedViewController) {
-                passed = model.dialogView.bindedViewController == [UIViewController windowCurrentViewController];
+            if (model.dialogView.boundViewController) {
+                passed = model.dialogView.boundViewController == [UIViewController windowCurrentViewController];
             }
 
             if ((model.isNeedWaitInQueue && model.isOverTimeInQueue) || !passed) {
@@ -430,12 +430,12 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
 }
 
 /// 删除除队列中之外的弹框
-- (void)deleteUnexistPriority {
+- (void)deleteNonexistentPriority {
     for (id object in [self keyView].subviews) {
         if ([object isKindOfClass:[DialogView class]]) {
             DialogView *view = (DialogView *)object;
             if (!view.isExistPriority) {
-                [view closeDialogView];
+                [view close];
             }
         }
     }
@@ -458,7 +458,7 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
 /// @param exceptCurrentDialog 是否除当前正显示的弹框（YES：不删除当前显示的弹框，NO：当前显示的弹框也删除）
 - (void)removeAllDialogWithExceptCurrentDialog:(BOOL)exceptCurrentDialog {
     @synchronized(self) {
-        [self deleteUnexistPriority];
+        [self deleteNonexistentPriority];
 
         for (NSMutableArray<DialogPriorityModel *> *models in self.allPriorityArray) {
             NSArray<DialogPriorityModel *> *needRemoves = [NSArray arrayWithArray:models];
@@ -467,7 +467,7 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
             DialogPriorityModel *current;
             for (DialogPriorityModel *model in needRemoves) {
                 if (!exceptCurrentDialog || self.currentPriorityModel != model) {
-                    [model.dialogView closeDialogViewWithAnimation:NO holdInQueue:NO];
+                    [model.dialogView closeWithAnimation:NO holdInQueue:NO];
                 } else {
                     current = model;
                 }
@@ -497,7 +497,7 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
             [models removeObjectsInArray:[needRemove copy]];
 
             for (DialogPriorityModel *model in needRemove) {
-                [model.dialogView closeDialogViewWithAnimation:NO holdInQueue:NO];
+                [model.dialogView closeWithAnimation:NO holdInQueue:NO];
             }
         }
 
@@ -531,7 +531,7 @@ typedef void (^OverTimeOnShowBlock)(DialogView *dialogView);
             NSArray<DialogPriorityModel *> *needRemoves = [NSArray arrayWithArray:priorityArray];
             [priorityArray removeAllObjects];
             for (DialogPriorityModel *model in needRemoves) {
-                [model.dialogView closeDialogViewWithAnimation:NO holdInQueue:NO];
+                [model.dialogView closeWithAnimation:NO holdInQueue:NO];
             }
 
             if (self.currentPriorityModel.priorityType == priorityType) {

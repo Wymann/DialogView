@@ -10,7 +10,7 @@
 
 #import "BasicDialogModel.h"
 
-#import "UIColor+TCLH.h"
+#import "UIColor+Dialog.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

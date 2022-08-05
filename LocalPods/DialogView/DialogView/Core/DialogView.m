@@ -23,7 +23,7 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 @property (nonatomic, assign) DialogPosition position;          //出现时候的动画
 @property (nonatomic, assign) BOOL sideTap;                     // 点击周边空白处是否关闭
 @property (nonatomic, assign) BOOL bounce;                      // 是否弹性动画弹出
-@property (nonatomic, assign) BOOL opendKeyboard;               // 键盘是否开启
+@property (nonatomic, assign) BOOL openedKeyboard;              // 键盘是否开启
 @property (nonatomic) CGRect startRect;                         // contentView初始位置
 @property (nonatomic) CGRect finalRect;                         // contentView最后位置
 @property (nonatomic) CGFloat contentViewWidth;                 // contentView宽
@@ -32,10 +32,10 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 @property (nonatomic, strong) ButtonsDialogModel *buttonsModel; // 按钮
 
 @property (nonatomic, strong) NSMutableArray *showBlocks;
-@property (nonatomic, strong) NSMutableArray *unholdInQueueBlocks;
+@property (nonatomic, strong) NSMutableArray *releaseFromQueueBlocks;
 @property (nonatomic, strong) NSMutableArray *disappearBlocks;
 
-@property (nonatomic, copy) UnholdInQueueBlock mainUnholdInQueueBlock;
+@property (nonatomic, copy) ReleaseFromQueueBlock mainReleaseFromQueueBlock;
 
 // UI
 @property (nonatomic, strong) UIView *contentView; //主内容视图
@@ -208,14 +208,14 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 
                 __weak typeof(self) weakSelf = self;
 
-                self.selectorElement.resultBlock = ^(NSArray<SelectorDialogItem *> *_Nonnull selectedItems, NSArray<NSNumber *> *_Nonnull selectedIndexs) {
+                self.selectorElement.resultBlock = ^(NSArray<SelectorDialogItem *> *_Nonnull selectedItems, NSArray<NSNumber *> *_Nonnull selectedIndexes) {
                     weakSelf.result.selectedItems = selectedItems;
-                    weakSelf.result.selectedIndexs = selectedIndexs;
+                    weakSelf.result.selectedIndexes = selectedIndexes;
 
                     if (weakSelf.resultBlock) {
                         BOOL close = weakSelf.resultBlock(weakSelf.result);
                         if (close) {
-                            [weakSelf closeDialogView];
+                            [weakSelf close];
                         }
                     }
                 };
@@ -291,15 +291,15 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 
         if (self.selectorElement) {
             self.result.selectedItems = [self.selectorElement.selectedItems copy];
-            self.result.selectedIndexs = [self.selectorElement.selectedIndexs copy];
+            self.result.selectedIndexes = [self.selectorElement.selectedIndexes copy];
         }
 
         BOOL close = self.resultBlock(self.result);
         if (close) {
-            [self closeDialogView];
+            [self close];
         }
     } else {
-        [self closeDialogView];
+        [self close];
     }
 }
 
@@ -313,7 +313,7 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 }
 
 - (void)closeTapClick {
-    if (self.opendKeyboard) {
+    if (self.openedKeyboard) {
         [self.textField resignFirstResponder];
         [self.textView resignFirstResponder];
         return;
@@ -326,7 +326,7 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 #pragma mark - Public Methods
 
 /** 弹出 */
-- (void)showDialogView {
+- (void)show {
     self.hidden = NO;
     self.contentView.alpha = self.animation == ShowAnimationFade ? 0.0 : 1.0;
     [self.superview bringSubviewToFront:self];
@@ -359,29 +359,29 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
     }
 }
 
-- (void)closeDialogView {
-    [self closeDialogViewWithAnimation:YES holdInQueue:NO];
+- (void)close {
+    [self closeWithAnimation:YES holdInQueue:NO];
 }
 
-- (void)closeDialogViewWithHoldInQueue:(BOOL)holdInQueue {
-    [self closeDialogViewWithAnimation:NO holdInQueue:holdInQueue];
+- (void)closeWithHoldInQueue:(BOOL)holdInQueue {
+    [self closeWithAnimation:NO holdInQueue:holdInQueue];
 }
 
-- (void)unholdInQueue {
+- (void)releaseFromQueue {
     [self removeFromSuperview];
 
-    if (self.unholdInQueueBlocks.count > 0) {
-        for (UnholdInQueueBlock block in self.unholdInQueueBlocks) {
+    if (self.releaseFromQueueBlocks.count > 0) {
+        for (ReleaseFromQueueBlock block in self.releaseFromQueueBlocks) {
             block();
         }
     }
 
-    if (self.mainUnholdInQueueBlock) {
-        self.mainUnholdInQueueBlock();
+    if (self.mainReleaseFromQueueBlock) {
+        self.mainReleaseFromQueueBlock();
     }
 }
 
-- (void)closeDialogViewWithAnimation:(BOOL)animation holdInQueue:(BOOL)holdInQueue {
+- (void)closeWithAnimation:(BOOL)animation holdInQueue:(BOOL)holdInQueue {
     if (self.animation == ShowAnimationNone || !animation) {
         self.backgroundColor = BackStartColor;
         self.contentView.frame = self.startRect;
@@ -411,14 +411,14 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
         [self removeFromSuperview];
     }
 
-    if (self.unholdInQueueBlocks.count > 0 && !holdInQueue) {
-        for (UnholdInQueueBlock block in self.unholdInQueueBlocks) {
+    if (self.releaseFromQueueBlocks.count > 0 && !holdInQueue) {
+        for (ReleaseFromQueueBlock block in self.releaseFromQueueBlocks) {
             block();
         }
     }
 
-    if (self.mainUnholdInQueueBlock && !holdInQueue) {
-        self.mainUnholdInQueueBlock();
+    if (self.mainReleaseFromQueueBlock && !holdInQueue) {
+        self.mainReleaseFromQueueBlock();
     }
 
     if (self.disappearBlocks.count > 0) {
@@ -480,15 +480,15 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 }
 
 /// 添加从队列中移除回调
-- (void)addUnholdInQueueBlock:(UnholdInQueueBlock)unholdInQueueBlock {
-    if (unholdInQueueBlock) {
-        [self.unholdInQueueBlocks addObject:unholdInQueueBlock];
+- (void)addReleaseFromQueueBlock:(ReleaseFromQueueBlock)releaseFromQueueBlock {
+    if (releaseFromQueueBlock) {
+        [self.releaseFromQueueBlocks addObject:releaseFromQueueBlock];
     }
 }
 
 /// 添加从队列中移除主要回调
-- (void)setUpMainUnholdInQueueBlock:(UnholdInQueueBlock)mainUnholdInQueueBlock {
-    self.mainUnholdInQueueBlock = mainUnholdInQueueBlock;
+- (void)setUpMainReleaseFromQueueBlock:(ReleaseFromQueueBlock)mainReleaseFromQueueBlock {
+    self.mainReleaseFromQueueBlock = mainReleaseFromQueueBlock;
 }
 
 #pragma mark - Private Methods
@@ -516,7 +516,7 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 }
 
 - (void)keyboardShowAction:(NSNotification *)sender {
-    self.opendKeyboard = YES;
+    self.openedKeyboard = YES;
     NSDictionary *useInfo = [sender userInfo];
     NSValue *value = [useInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGFloat keyBoardHeight = ceil([value CGRectValue].size.height);
@@ -530,7 +530,7 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 }
 
 - (void)keyboardHideAction:(NSNotification *)sender {
-    self.opendKeyboard = NO;
+    self.openedKeyboard = NO;
     [UIView animateWithDuration:0.2 animations:^{
         self.contentView.frame = self.finalRect;
     }];
@@ -579,11 +579,11 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
     return _disappearBlocks;
 }
 
-- (NSMutableArray *)unholdInQueueBlocks {
-    if (!_unholdInQueueBlocks) {
-        _unholdInQueueBlocks = [NSMutableArray array];
+- (NSMutableArray *)releaseFromQueueBlocks {
+    if (!_releaseFromQueueBlocks) {
+        _releaseFromQueueBlocks = [NSMutableArray array];
     }
-    return _unholdInQueueBlocks;
+    return _releaseFromQueueBlocks;
 }
 
 #pragma mark - UITextFieldDelegate

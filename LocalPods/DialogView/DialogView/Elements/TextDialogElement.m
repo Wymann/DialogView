@@ -9,7 +9,6 @@
 #import "DialogTextTool.h"
 #import "TextDialogElement.h"
 
-#define DefaultTextColor @"#000000"               // 默认文本颜色
 static const CGFloat DefaultFontSize = 16.0;      // 默认字体大小
 static const CGFloat DefaultElementHeight = 40.0; // 默认高度
 static const CGFloat DefaultLineSpace = 5;        // 默认行间距
@@ -17,7 +16,7 @@ static const CGFloat DefaultLineSpace = 5;        // 默认行间距
 
 @interface TextDialogElement ()
 
-@property (nonatomic, strong) UIScrollView *scrolView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UILabel *textLabel;
 
 @end
@@ -37,7 +36,6 @@ static const CGFloat DefaultLineSpace = 5;        // 默认行间距
         if (textModel.attributedTextContent.string.length > 0) {
             self.textLabel.attributedText = textModel.attributedTextContent;
         } else {
-            NSString *textColor = textModel.textColor.length > 0 ? textModel.textColor : DefaultTextColor;
             CGFloat fontSize = textModel.fontSize > 0 ? textModel.fontSize : DefaultFontSize;
             CGFloat lineSpace = textModel.lineSpace > 0 ? textModel.lineSpace : DefaultLineSpace;
 
@@ -63,7 +61,7 @@ static const CGFloat DefaultLineSpace = 5;        // 默认行间距
                                                                                          textAlignment:textModel.textAlignment
                                                                                               FontSize:fontSize
                                                                                              lineSpace:lineSpace
-                                                                                             textColor:[UIColor tclh_colorWithHexString:textColor]
+                                                                                             textColor:textModel.textColor
                                                                                          richTextArray:[richText copy]];
             self.textLabel.attributedText = attributedText;
         }
@@ -77,12 +75,12 @@ static const CGFloat DefaultLineSpace = 5;        // 默认行间距
                                                                        maxLines:textModel.maxLines];
 
         if (textModel.maxHeight > 0 && textModel.scrollable && textModel.maxHeight < textHeight) {
-            self.scrolView.frame = CGRectMake(X, Y, W, H);
-            self.scrolView.contentSize = CGSizeMake(W, textHeight);
-            [self addSubview:self.scrolView];
+            self.scrollView.frame = CGRectMake(X, Y, W, H);
+            self.scrollView.contentSize = CGSizeMake(W, textHeight);
+            [self addSubview:self.scrollView];
 
             self.textLabel.frame = CGRectMake(0, 0, W, textHeight);
-            [self.scrolView addSubview:self.textLabel];
+            [self.scrollView addSubview:self.textLabel];
         } else {
             self.textLabel.frame = CGRectMake(X, Y, W, H);
             [self addSubview:self.textLabel];
@@ -91,11 +89,11 @@ static const CGFloat DefaultLineSpace = 5;        // 默认行间距
 }
 
 #pragma mark - Lazy load Methods
-- (UIScrollView *)scrolView {
-    if (!_scrolView) {
-        _scrolView = [[UIScrollView alloc] init];
+- (UIScrollView *)scrollView {
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] init];
     }
-    return _scrolView;
+    return _scrollView;
 }
 
 - (UILabel *)textLabel {
@@ -115,7 +113,6 @@ static const CGFloat DefaultLineSpace = 5;        // 默认行间距
     if (textModel.attributedTextContent.string.length > 0) {
         height = [DialogTextTool richTextHeightWithAttributedString:textModel.attributedTextContent width:width maxLines:textModel.maxLines] + textModel.textEdgeInsets.top + textModel.textEdgeInsets.bottom;
     } else if (textModel.textContent.length > 0) {
-        NSString *textColor = textModel.textColor.length > 0 ? textModel.textColor : DefaultTextColor;
         CGFloat fontSize = textModel.fontSize > 0 ? textModel.fontSize : DefaultFontSize;
         CGFloat lineSpace = textModel.lineSpace > 0 ? textModel.lineSpace : DefaultLineSpace;
 
@@ -123,7 +120,7 @@ static const CGFloat DefaultLineSpace = 5;        // 默认行间距
                                                                                      textAlignment:textModel.textAlignment
                                                                                           FontSize:fontSize
                                                                                          lineSpace:lineSpace
-                                                                                         textColor:[UIColor tclh_colorWithHexString:textColor]
+                                                                                         textColor:textModel.textColor
                                                                                      richTextArray:textModel.richText
                                                                                          breakMode:0];
         height =

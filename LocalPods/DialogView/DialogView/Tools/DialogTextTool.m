@@ -10,9 +10,8 @@
 
 #import "DialogTextTool.h"
 
-#import "UIColor+TCLH.h"
-#import "UIFont+TCLHUI.h"
-
+#import "UIColor+Dialog.h"
+#import "UIFont+Dialog.h"
 
 @implementation DialogTextTool
 
@@ -75,7 +74,7 @@
                                                        richTextArray:(NSArray *)richTextArray
                                                            breakMode:(NSLineBreakMode)breakMode {
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:textContent];
-    [attributedText addAttribute:NSFontAttributeName value:[UIFont fontForGothamBookWithSize:fontSize] range:NSMakeRange(0, textContent.length)];
+    [attributedText addAttribute:NSFontAttributeName value:[UIFont dialog_normalFontWithFontSize:fontSize] range:NSMakeRange(0, textContent.length)];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpace];
     [paragraphStyle setLineBreakMode:breakMode];
@@ -93,7 +92,7 @@
             if ([richType isEqualToString:@"color"]) {
                 NSString *textColorString = richDic[@"textColor"];
                 if (textColorString.length > 0) {
-                    UIColor *color = [UIColor tclh_colorWithHexString:textColorString];
+                    UIColor *color = [UIColor dialog_colorWithHexString:textColorString];
                     [attributedText addAttribute:NSForegroundColorAttributeName value:color range:range];
                 } else {
                     continue;
@@ -109,7 +108,7 @@
                 if (richDic[@"fontSize"]) {
                     CGFloat fontSizeFloat = [richDic[@"fontSize"] floatValue];
                     UIFont *font =
-                        [richDic[@"bold"] isEqualToString:@"true"] ? [UIFont fontForGothamMediumWithSize:fontSizeFloat] : [UIFont fontForGothamBookWithSize:fontSizeFloat];
+                        [richDic[@"bold"] isEqualToString:@"true"] ? [UIFont dialog_boldFontWithFontSize:fontSizeFloat] : [UIFont dialog_normalFontWithFontSize:fontSizeFloat];
                     [attributedText addAttribute:NSFontAttributeName value:font range:range];
                 } else {
                     continue;

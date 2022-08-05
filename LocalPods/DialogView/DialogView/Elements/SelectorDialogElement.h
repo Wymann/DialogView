@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^ResultFromItemTapBlock)(NSArray<SelectorDialogItem *> *selectedItems, NSArray<NSNumber *> *selectedIndexs);
+typedef void (^ResultFromItemTapBlock)(NSArray<SelectorDialogItem *> *selectedItems, NSArray<NSNumber *> *selectedIndexes);
 
 
 @interface SelectorCell : UITableViewCell
@@ -28,7 +28,7 @@ typedef void (^ResultFromItemTapBlock)(NSArray<SelectorDialogItem *> *selectedIt
 
 @property (nonatomic, copy) ResultFromItemTapBlock resultBlock;
 
-@property (nonatomic, strong, readonly) NSMutableArray<NSNumber *> *selectedIndexs;
+@property (nonatomic, strong, readonly) NSMutableArray<NSNumber *> *selectedIndexes;
 @property (nonatomic, strong, readonly) NSMutableArray<SelectorDialogItem *> *selectedItems;
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "TextShouldChangeResModel.h"
+#import "DialogConfig.h"
 
 #import "ButtonsDialogElement.h"
 #import "DialogResult.h"
@@ -22,36 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class DialogPriorityModel;
 
-/**
- 出现时动画
-
- - ShowAnimationFromTop: 从上往下
- - ShowAnimationFromLeft: 从左往右
- - ShowAnimationFromBottom: 从下往上
- - ShowAnimationFromRight: 从右往左
- - ShowAnimationFade: 渐渐显示（透明度动画）
- - ShowAnimationNone: 无动画（默认）
- */
-typedef NS_ENUM(NSInteger, ShowAnimation) {
-    ShowAnimationFromTop = 0,
-    ShowAnimationFromLeft = 1,
-    ShowAnimationFromBottom = 2,
-    ShowAnimationFromRight = 3,
-    ShowAnimationFade = 4,
-    ShowAnimationNone = 5,
-};
-
-/**
- 弹框弹出后停留状态
-
- - DialogPositionMiddle: 停在中间
- - DialogPositionBottom: 停在下面
- - DialogPositionTop: 停在上面
- */
-typedef NS_ENUM(NSInteger, DialogPosition) { DialogPositionMiddle = 0,
-                                             DialogPositionBottom = 1,
-                                             DialogPositionTop = 2 };
-
 /** 显示回调 */
 typedef void (^ShowBlock)(void);
 
@@ -59,7 +30,7 @@ typedef void (^ShowBlock)(void);
 typedef void (^DisappearBlock)(BOOL holdInQueue);
 
 /** 从队列移除回调 */
-typedef void (^UnholdInQueueBlock)(void);
+typedef void (^ReleaseFromQueueBlock)(void);
 
 /** 点击按钮回调 */
 typedef BOOL (^DialogResultBlock)(DialogResult *result);
@@ -73,7 +44,7 @@ typedef NSString *_Nullable (^TextDidChangeBlock)(id inputView);
 
 @interface DialogView : UIView
 
-@property (nonatomic, strong) UIViewController *bindedViewController; // 绑定的控制器（只有这个控制器显示的时候才弹框）
+@property (nonatomic, strong) UIViewController *boundViewController; // 绑定的控制器（只有这个控制器显示的时候才弹框）
 
 /**
  结果回调
@@ -138,19 +109,19 @@ typedef NSString *_Nullable (^TextDidChangeBlock)(id inputView);
                             bounce:(BOOL)bounce;
 
 /** 弹出 */
-- (void)showDialogView;
+- (void)show;
 
 /** 关闭 */
-- (void)closeDialogView;
+- (void)close;
 
 /** 关闭 */
-- (void)closeDialogViewWithHoldInQueue:(BOOL)holdInQueue;
+- (void)closeWithHoldInQueue:(BOOL)holdInQueue;
 
 /** 从队列中移除 */
-- (void)unholdInQueue;
+- (void)releaseFromQueue;
 
 /** 关闭 */
-- (void)closeDialogViewWithAnimation:(BOOL)animation holdInQueue:(BOOL)holdInQueue;
+- (void)closeWithAnimation:(BOOL)animation holdInQueue:(BOOL)holdInQueue;
 
 /// 开启键盘
 - (void)becomeFirstResponder;
@@ -178,10 +149,10 @@ typedef NSString *_Nullable (^TextDidChangeBlock)(id inputView);
 - (void)addDisappearBlock:(DisappearBlock)disappearBlock;
 
 /// 添加从队列中移除回调
-- (void)addUnholdInQueueBlock:(UnholdInQueueBlock)unholdInQueueBlock;
+- (void)addReleaseFromQueueBlock:(ReleaseFromQueueBlock)releaseFromQueueBlock;
 
 /// 添加从队列中移除主要回调
-- (void)setUpMainUnholdInQueueBlock:(UnholdInQueueBlock)mainUnholdInQueueBlock;
+- (void)setUpMainReleaseFromQueueBlock:(ReleaseFromQueueBlock)mainReleaseFromQueueBlock;
 
 /// 弹框宽度
 + (CGFloat)contentWidth;

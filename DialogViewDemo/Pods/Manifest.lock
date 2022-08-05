@@ -1,21 +1,25 @@
 PODS:
-  - DialogView (1.0.1)
-  - DialogViewSwift (1.0.1)
+  - DialogView (1.0.1):
+    - SDWebImage
+  - SDWebImage (5.13.2):
+    - SDWebImage/Core (= 5.13.2)
+  - SDWebImage/Core (5.13.2)
 
 DEPENDENCIES:
   - DialogView (from `../LocalPods/DialogView`)
-  - DialogViewSwift (from `../LocalPods/DialogViewSwift`)
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   DialogView:
     :path: "../LocalPods/DialogView"
-  DialogViewSwift:
-    :path: "../LocalPods/DialogViewSwift"
 
 SPEC CHECKSUMS:
-  DialogView: b48c80052f1e1c007537c3b1df5faddaabc921f0
-  DialogViewSwift: 9d435e7be8f26fd226de0baeec2f2502589e4d9a
+  DialogView: 36c1b7ad665312a7de21c053f59bf435428a92ec
+  SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
 
-PODFILE CHECKSUM: 5d44000c0a0437941711c3f7ffc833896bbf01c1
+PODFILE CHECKSUM: 7f296d30018a685ecc950ab784813fee7c14f916
 
 COCOAPODS: 1.11.3

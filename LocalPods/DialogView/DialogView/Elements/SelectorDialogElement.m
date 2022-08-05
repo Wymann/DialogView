@@ -9,7 +9,7 @@
 #import "DialogTextTool.h"
 #import "SelectorDialogElement.h"
 
-#import "UIFont+TCLHUI.h"
+#import "UIFont+Dialog.h"
 
 static const CGFloat minimalCellHeight = 48.0;
 
@@ -84,8 +84,8 @@ static const CGFloat HGap = 16.0;
         titleColor = self.item.preference.unenabledColor;
         subtitleColor = self.item.preference.unenabledColor;
     }
-    self.titleLab.textColor = [UIColor tclh_colorWithHexString:titleColor];
-    self.subtitleLab.textColor = [UIColor tclh_colorWithHexString:subtitleColor];
+    self.titleLab.textColor = [UIColor dialog_colorWithHexString:titleColor];
+    self.subtitleLab.textColor = [UIColor dialog_colorWithHexString:subtitleColor];
 
     // arrowView & selectView
     UIImageView *rightImageView;
@@ -107,7 +107,7 @@ static const CGFloat HGap = 16.0;
     rightImageView.hidden = !self.item.isEnabled;
 
     // underline
-    self.underline.backgroundColor = [UIColor tclh_colorWithHexString:@"#E6E6E6"];
+    self.underline.backgroundColor = [UIColor dialog_colorWithHexString:@"#E6E6E6"];
     self.underline.frame = CGRectMake(0, CGRectGetHeight(self.contentView.frame) - 0.5, CGRectGetWidth(self.contentView.frame), 0.5);
     [self.contentView addSubview:self.underline];
 }
@@ -130,7 +130,7 @@ static const CGFloat HGap = 16.0;
 - (UILabel *)titleLab {
     if (!_titleLab) {
         _titleLab = [[UILabel alloc] init];
-        _titleLab.font = [UIFont fontForGothamBookWithSize:16.0];
+        _titleLab.font = [UIFont dialog_normalFontWithFontSize:16.0];
     }
     return _titleLab;
 }
@@ -139,7 +139,7 @@ static const CGFloat HGap = 16.0;
     if (!_subtitleLab) {
         _subtitleLab = [[UILabel alloc] init];
         _subtitleLab.textAlignment = NSTextAlignmentRight;
-        _subtitleLab.font = [UIFont fontForGothamBookWithSize:14.0];
+        _subtitleLab.font = [UIFont dialog_normalFontWithFontSize:14.0];
     }
     return _subtitleLab;
 }
@@ -167,7 +167,7 @@ static const CGFloat HGap = 16.0;
 @interface SelectorDialogElement () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray<NSNumber *> *selectedIndexs;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *selectedIndexes;
 @property (nonatomic, strong) NSMutableArray<SelectorDialogItem *> *selectedItems;
 
 @end
@@ -204,11 +204,11 @@ static const CGFloat HGap = 16.0;
     return _tableView;
 }
 
-- (NSMutableArray<NSNumber *> *)selectedIndexs {
-    if (!_selectedIndexs) {
-        _selectedIndexs = [NSMutableArray array];
+- (NSMutableArray<NSNumber *> *)selectedIndexes {
+    if (!_selectedIndexes) {
+        _selectedIndexes = [NSMutableArray array];
     }
-    return _selectedIndexs;
+    return _selectedIndexes;
 }
 
 - (NSMutableArray<SelectorDialogItem *> *)selectedItems {
@@ -219,7 +219,7 @@ static const CGFloat HGap = 16.0;
     }
 
     SelectorDialogModel *selectorModel = (SelectorDialogModel *)self.model;
-    for (NSNumber *num in self.selectedIndexs) {
+    for (NSNumber *num in self.selectedIndexes) {
         [_selectedItems addObject:[selectorModel.items objectAtIndex:[num integerValue]]];
     }
     return _selectedItems;
@@ -266,42 +266,42 @@ static const CGFloat HGap = 16.0;
         return;
     }
 
-    if ([self.selectedIndexs containsObject:@(indexPath.row)]) {
+    if ([self.selectedIndexes containsObject:@(indexPath.row)]) {
         item.selected = NO;
 
-        [self.selectedIndexs removeObject:@(indexPath.row)];
+        [self.selectedIndexes removeObject:@(indexPath.row)];
 
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     } else {
         if (selectorModel.preference.maxSelectNum > 1) {
-            if (self.selectedIndexs.count < selectorModel.preference.maxSelectNum) {
+            if (self.selectedIndexes.count < selectorModel.preference.maxSelectNum) {
                 item.selected = YES;
 
-                [self.selectedIndexs addObject:@(indexPath.row)];
+                [self.selectedIndexes addObject:@(indexPath.row)];
 
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             }
         } else if (selectorModel.preference.maxSelectNum == 1) {
-            if (self.selectedIndexs.count == 1) {
+            if (self.selectedIndexes.count == 1) {
                 item.selected = YES;
 
-                NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:[self.selectedIndexs[0] integerValue] inSection:0];
+                NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:[self.selectedIndexes[0] integerValue] inSection:0];
                 SelectorDialogItem *oldItem = selectorModel.items[oldIndexPath.row];
                 oldItem.selected = NO;
 
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath, oldIndexPath] withRowAnimation:UITableViewRowAnimationNone];
 
-                [self.selectedIndexs removeAllObjects];
-                [self.selectedIndexs addObject:@(indexPath.row)];
+                [self.selectedIndexes removeAllObjects];
+                [self.selectedIndexes addObject:@(indexPath.row)];
             } else {
                 item.selected = YES;
 
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 
-                [self.selectedIndexs addObject:@(indexPath.row)];
+                [self.selectedIndexes addObject:@(indexPath.row)];
 
                 if (selectorModel.preference.isResultFromItemTap && self.resultBlock) {
-                    self.resultBlock([self.selectedItems copy], [self.selectedIndexs copy]);
+                    self.resultBlock([self.selectedItems copy], [self.selectedIndexes copy]);
                 }
             }
         }

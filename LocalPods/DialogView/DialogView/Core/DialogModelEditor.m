@@ -10,8 +10,10 @@
 
 #import "DialogModelEditor.h"
 #import "DialogTextTool.h"
+#import "DialogConfig.h"
 
-#import "UIFont+TCLHUI.h"
+#import "UIFont+Dialog.h"
+#import "UIColor+Dialog.h"
 
 #define DIALOG_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height //手机屏幕高
 
@@ -22,13 +24,13 @@
     TextDialogModel *textModel = [[TextDialogModel alloc] init];
     textModel.elementClassName = @"TextDialogElement";
     textModel.textContent = title;
-    textModel.textColor = titleColor.length > 0 ? titleColor : @"#2D3132";
+    textModel.textColor = titleColor.length > 0 ? [UIColor dialog_colorWithHexString:titleColor] : [UIColor dialog_normalColor];
     textModel.fontSize = 18.0;
     textModel.bold = YES;
 
     /// 一行时候居中，超过两行的话居左显示
-    CGFloat textWidth = [DialogView contentWidth] - DialogLeftGap - DialogRightGap;
-    NSInteger lines = [DialogTextTool linesOfText:title font:[UIFont fontForGothamBookWithSize:textModel.fontSize] width:textWidth];
+    CGFloat textWidth = [DialogView contentWidth] - [DialogConfig sharedInstance].pattern.leftGap - [DialogConfig sharedInstance].pattern.rightGap;
+    NSInteger lines = [DialogTextTool linesOfText:title font:[UIFont dialog_normalFontWithFontSize:textModel.fontSize] width:textWidth];
     textModel.textAlignment = lines >= 2 ? NSTextAlignmentLeft : NSTextAlignmentCenter;
 
     return textModel;
@@ -38,7 +40,7 @@
     TextDialogModel *textModel = [[TextDialogModel alloc] init];
     textModel.elementClassName = @"TextDialogElement";
     textModel.textContent = timeText;
-    textModel.textColor = @"#992D3132";
+    textModel.textColor = [UIColor dialog_normalColorWithAlpha:0.6];
     textModel.fontSize = 16.0;
     textModel.textAlignment = NSTextAlignmentCenter;
     textModel.bold = NO;
@@ -49,13 +51,13 @@
     TextDialogModel *textModel = [[TextDialogModel alloc] init];
     textModel.elementClassName = @"TextDialogElement";
     textModel.textContent = subtitle;
-    textModel.textColor = subtitleColor.length > 0 ? subtitleColor : @"#2D3132";
+    textModel.textColor = subtitleColor.length > 0 ? [UIColor dialog_colorWithHexString:subtitleColor] : [UIColor dialog_normalColor];
     textModel.fontSize = 16.0;
     textModel.bold = NO;
 
     /// 一行时候居中，超过两行的话居左显示
-    CGFloat textWidth = [DialogView contentWidth] - DialogLeftGap - DialogRightGap;
-    NSInteger lines = [DialogTextTool linesOfText:subtitle font:[UIFont fontForGothamBookWithSize:textModel.fontSize] width:textWidth];
+    CGFloat textWidth = [DialogView contentWidth] - [DialogConfig sharedInstance].pattern.leftGap - [DialogConfig sharedInstance].pattern.rightGap;
+    NSInteger lines = [DialogTextTool linesOfText:subtitle font:[UIFont dialog_normalFontWithFontSize:textModel.fontSize] width:textWidth];
     textModel.textAlignment = lines >= 2 ? NSTextAlignmentLeft : NSTextAlignmentCenter;
 
     return textModel;
@@ -65,13 +67,13 @@
     TextDialogModel *textModel = [[TextDialogModel alloc] init];
     textModel.elementClassName = @"TextDialogElement";
     textModel.textContent = subtitle;
-    textModel.textColor = subtitleColor.length > 0 ? subtitleColor : @"#2D3132";
+    textModel.textColor = subtitleColor.length > 0 ? [UIColor dialog_colorWithHexString:subtitleColor] : [UIColor dialog_normalColor];
     textModel.fontSize = fontSize;
     textModel.bold = NO;
 
     /// 一行时候居中，超过两行的话居左显示
-    CGFloat textWidth = [DialogView contentWidth] - DialogLeftGap - DialogRightGap;
-    NSInteger lines = [DialogTextTool linesOfText:subtitle font:[UIFont fontForGothamBookWithSize:textModel.fontSize] width:textWidth];
+    CGFloat textWidth = [DialogView contentWidth] - [DialogConfig sharedInstance].pattern.leftGap - [DialogConfig sharedInstance].pattern.rightGap;
+    NSInteger lines = [DialogTextTool linesOfText:subtitle font:[UIFont dialog_normalFontWithFontSize:textModel.fontSize] width:textWidth];
     textModel.textAlignment = lines >= 2 ? NSTextAlignmentLeft : NSTextAlignmentCenter;
 
     return textModel;
@@ -88,24 +90,9 @@
 }
 
 + (ButtonsDialogModel *)createButtonsDialogModelWithButtons:(NSArray<NSString *> *)buttons buttonColors:(NSArray<NSString *> *)buttonColors {
-    ButtonsDialogModel *buttonsModel = [[ButtonsDialogModel alloc] init];
-    buttonsModel.elementClassName = @"ButtonsDialogElement";
-    buttonsModel.buttonTitles = buttons;
-    buttonsModel.fontSize = 16.0;
-    if (buttonColors) {
-        buttonsModel.textColors = buttonColors;
-    } else if (buttons.count > 0) {
-        NSMutableArray *colors = [NSMutableArray array];
-        for (NSInteger i = 0; i < buttons.count; i++) {
-            if (i == buttons.count - 1) {
-                [colors addObject:@"#E64C3D"];
-            } else {
-                [colors addObject:@"#2D3132"];
-            }
-        }
-        buttonsModel.textColors = [colors copy];
-    }
-    return buttonsModel;
+    return [self createButtonsDialogModelWithButtons:buttons
+                                        buttonColors:buttonColors
+                                   buttonsLayoutType:DialogButtonsLayoutHorizontal];
 }
 
 + (ButtonsDialogModel *)createButtonsDialogModelWithButtons:(NSArray<NSString *> *)buttons
@@ -121,28 +108,18 @@
     } else if (buttons.count > 0) {
         NSMutableArray *colors = [NSMutableArray array];
         for (NSInteger i = 0; i < buttons.count; i++) {
-            switch (buttonsLayoutType) {
-                case DialogButtonsLayoutHorizontal: {
-                    if (i == buttons.count - 1) {
-                        [colors addObject:@"#E64C3D"];
-                    } else {
-                        [colors addObject:@"#2D3132"];
-                    }
-                } break;
-                case DialogButtonsLayoutVertical: {
-                    if (i == 0) {
-                        [colors addObject:@"#E64C3D"];
-                    } else {
-                        [colors addObject:@"#2D3132"];
-                    }
-                } break;
-                default: {
-                    if (i == buttons.count - 1) {
-                        [colors addObject:@"#E64C3D"];
-                    } else {
-                        [colors addObject:@"#2D3132"];
-                    }
-                } break;
+            if (buttonsLayoutType == DialogButtonsLayoutVertical) {
+                if (i == 0) {
+                    [colors addObject:[DialogConfig sharedInstance].color.hintColor];
+                } else {
+                    [colors addObject:[DialogConfig sharedInstance].color.commonColor];
+                }
+            } else {
+                if (i == buttons.count - 1) {
+                    [colors addObject:[DialogConfig sharedInstance].color.hintColor];
+                } else {
+                    [colors addObject:[DialogConfig sharedInstance].color.commonColor];
+                }
             }
         }
         buttonsModel.textColors = [colors copy];
@@ -157,9 +134,9 @@
     model.elementClassName = @"TextFieldDialogElement";
     model.textContent = inputText;
     model.placeHolderContent = placeHolder;
-    model.textColor = @"#2D3132";
+    model.textColor = [UIColor dialog_normalColor];
     model.keyboardType = keyboardType;
-    model.tintColor = @"#E64C3D";
+    model.tintColor = [UIColor dialog_hintColor];
     return model;
 }
 
@@ -171,9 +148,9 @@
     model.elementClassName = @"TextViewDialogElement";
     model.textContent = inputText;
     model.placeHolderContent = placeHolder;
-    model.textColor = @"#2D3132";
+    model.textColor = [UIColor dialog_normalColor];
     model.keyboardType = keyboardType;
-    model.tintColor = @"#E64C3D";
+    model.tintColor = [UIColor dialog_hintColor];
     model.maxTextLength = maxTextLength;
     return model;
 }
@@ -235,14 +212,14 @@
         BasicDialogModel *model = models[i];
         CGFloat top;
         CGFloat bottom;
-        CGFloat TopGap = existTitle ? DialogTopGapWithTile : DialogTopGapWithNoneTile;
+        CGFloat TopGap = existTitle ? [DialogConfig sharedInstance].pattern.topGapWithTile : [DialogConfig sharedInstance].pattern.topGapWithoutTile;
         top = (i == 0) ? TopGap : 0;
         if ([model isKindOfClass:[TextFieldDialogModel class]] || [model isKindOfClass:[TextViewDialogModel class]]) {
             bottom = 0;
         } else {
-            bottom = (i == models.count - 1) ? DialogBottomGap : DialogVGap;
+            bottom = (i == models.count - 1) ? [DialogConfig sharedInstance].pattern.bottomGap : [DialogConfig sharedInstance].pattern.verticalGap;
         }
-        model.margin = UIEdgeInsetsMake(top, DialogLeftGap, bottom, DialogRightGap);
+        model.margin = UIEdgeInsetsMake(top, [DialogConfig sharedInstance].pattern.leftGap, bottom, [DialogConfig sharedInstance].pattern.rightGap);
     }
 }
 

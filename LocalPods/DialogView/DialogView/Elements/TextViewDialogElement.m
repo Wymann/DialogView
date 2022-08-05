@@ -8,13 +8,11 @@
 
 #import "TextViewDialogElement.h"
 
-#import "UIFont+TCLHUI.h"
 #import "UITextView+Dialog.h"
 #import "UIView+Dialog.h"
+#import "UIFont+Dialog.h"
 
-#define DefaultTextColor @"#000000"                // 默认文本颜色
-#define LineColor @"#666666"                       // 默认线条颜色
-#define PlaceHolderColor @"#888888"                // 占位文字颜色
+#define DialogPlaceHolderColor @"#888888"          // 占位文字颜色
 static const CGFloat DefaultFontSize = 14.0;       // 默认字体大小
 static const CGFloat DefaultElementHeight = 144.0; // 默认高度
 static const CGFloat ErrorLabelHeight = 24.0;
@@ -46,15 +44,14 @@ static const CGFloat MaxLengthLabelBottomGap = 12.0;
     self.textView.frame = CGRectMake(X, Y, W, H);
     [self addSubview:self.textView];
 
-    NSString *textColor = textViewModel.textColor.length > 0 ? textViewModel.textColor : DefaultTextColor;
     CGFloat fontSize = textViewModel.fontSize > 0 ? textViewModel.fontSize : DefaultFontSize;
 
-    self.textView.textColor = [UIColor tclh_colorWithHexString:textColor];
+    self.textView.textColor = textViewModel.textColor;
     self.textView.placeholder = textViewModel.placeHolderContent;
-    self.textView.placeholderColor = [UIColor tclh_colorWithHexString:PlaceHolderColor];
+    self.textView.placeholderColor = [UIColor dialog_colorWithHexString:DialogPlaceHolderColor];
     self.textView.text = textViewModel.textContent;
     self.textView.textAlignment = textViewModel.textAlignment;
-    self.textView.font = [UIFont fontForGothamBookWithSize:fontSize];
+    self.textView.font = [UIFont dialog_normalFontWithFontSize:fontSize];
     self.textView.keyboardType = textViewModel.keyboardType;
     if (textViewModel.maxTextLength > 0) {
         self.textView.contentInset = UIEdgeInsetsMake(5, 5, MaxLengthLabelHeight + MaxLengthLabelBottomGap + 5, 5);
@@ -63,10 +60,7 @@ static const CGFloat MaxLengthLabelBottomGap = 12.0;
         self.textView.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
         self.textView.placeholderTextView.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
     }
-
-    if (textViewModel.tintColor.length > 0) {
-        self.textView.tintColor = [UIColor tclh_colorWithHexString:textViewModel.tintColor];
-    }
+    self.textView.tintColor = textViewModel.tintColor;
     self.textView.editable = textViewModel.editable;
 
     self.errorLabel.frame = CGRectMake(X, CGRectGetMaxY(self.textView.frame), W, ErrorLabelHeight);
@@ -89,7 +83,7 @@ static const CGFloat MaxLengthLabelBottomGap = 12.0;
     if (!_textView) {
         _textView = [[UITextView alloc] init];
         _textView.layer.cornerRadius = 4.0;
-        _textView.backgroundColor = [UIColor tclh_colorWithHexString:@"#F4F5F7"];
+        _textView.backgroundColor = [UIColor dialog_colorWithHexString:@"#F4F5F7"];
     }
     return _textView;
 }
@@ -97,8 +91,8 @@ static const CGFloat MaxLengthLabelBottomGap = 12.0;
 - (UILabel *)errorLabel {
     if (!_errorLabel) {
         _errorLabel = [[UILabel alloc] init];
-        _errorLabel.textColor = [UIColor tclh_colorWithHexString:@"#FF4747"];
-        _errorLabel.font = [UIFont fontForGothamBookWithSize:12];
+        _errorLabel.textColor = [UIColor dialog_colorWithHexString:@"#FF4747"];
+        _errorLabel.font = [UIFont dialog_normalFontWithFontSize:12];
     }
     return _errorLabel;
 }
@@ -106,8 +100,8 @@ static const CGFloat MaxLengthLabelBottomGap = 12.0;
 - (UILabel *)maxLengthLabel {
     if (!_maxLengthLabel) {
         _maxLengthLabel = [[UILabel alloc] init];
-        _maxLengthLabel.textColor = [UIColor tclh_colorWithHexString:@"#662D3132"];
-        _maxLengthLabel.font = [UIFont fontForGothamBookWithSize:14];
+        _maxLengthLabel.textColor = [UIColor dialog_normalColorWithAlpha:0.4];
+        _maxLengthLabel.font = [UIFont dialog_normalFontWithFontSize:14];
         _maxLengthLabel.textAlignment = NSTextAlignmentRight;
     }
     return _maxLengthLabel;

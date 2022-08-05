@@ -22,13 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 文本大小
 @property (nonatomic, assign) CGFloat fontSize;
 /// 文本颜色
-@property (nonatomic, copy) NSString *textColor;
+@property (nonatomic, strong) UIColor *textColor;
 /// 文本输入框四周边距
 @property (nonatomic, assign) UIEdgeInsets textViewEdgeInsets;
 /// 键盘类型
 @property (nonatomic, assign) UIKeyboardType keyboardType;
 /// 会影响光标等颜色
-@property (nonatomic, copy) NSString *tintColor;
+@property (nonatomic, strong) UIColor *tintColor;
 /// 是否可编辑
 @property (nonatomic, assign) BOOL editable;
 /// 是否可编辑

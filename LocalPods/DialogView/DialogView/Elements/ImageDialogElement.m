@@ -47,14 +47,14 @@
         if (imageModel.image) {
             self.imageView.image = imageModel.image;
             if (imageModel.imgBackColor.length > 0) {
-                self.imageView.backgroundColor = [UIColor tclh_colorWithHexString:imageModel.imgBackColor];
+                self.imageView.backgroundColor = [UIColor dialog_colorWithHexString:imageModel.imgBackColor];
             }
         } else {
             __weak typeof(self) weakSelf = self;
 
             [self.imageView sd_setImageWithURL:[NSURL URLWithString:imageModel.imgUrl] placeholderImage:imageModel.placeholder completed:^(UIImage *_Nullable image, NSError *_Nullable error, SDImageCacheType cacheType, NSURL *_Nullable imageURL) {
                 if (!error && imageModel.imgBackColor.length > 0) {
-                    weakSelf.imageView.backgroundColor = [UIColor tclh_colorWithHexString:imageModel.imgBackColor];
+                    weakSelf.imageView.backgroundColor = [UIColor dialog_colorWithHexString:imageModel.imgBackColor];
                 } else if (error && imageModel.errorImage) {
                     weakSelf.imageView.image = imageModel.errorImage;
                 }
