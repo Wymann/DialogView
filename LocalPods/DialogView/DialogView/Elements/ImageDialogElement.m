@@ -6,7 +6,7 @@
 //  Copyright © 2020 TCL Electronics Holdings Ltd. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/SDWebImage.h>
 
 #import "ImageDialogElement.h"
 

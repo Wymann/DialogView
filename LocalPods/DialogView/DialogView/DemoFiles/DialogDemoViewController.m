@@ -334,7 +334,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
         case DialogTypeNetImageBottom: {
             NSArray *buttons = @[@"取消", @"确定"];
             NSString *imageUrl =
-                @"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1296060925,2049657022&fm=26&gp=0.jpg";
+                @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201810%2F18%2F20181018162634_pqpie.thumb.700_0.jpg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662287169&t=37b6ca18d15eac53df9ae8730bf3dd61";
             [Dialog showDialogWithTitle:@"图片弹框1"
                                subtitle:@"加载网络图片"
                                imageUrl:imageUrl
@@ -427,7 +427,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
             //                return YES;
             //            }];
 
-            NSString *headurl = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=623994087,1173615898&fm=26&gp=0.jpg";
+            NSString *headurl = @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201810%2F18%2F20181018162634_pqpie.thumb.700_0.jpg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662287169&t=37b6ca18d15eac53df9ae8730bf3dd61";
 
             [Dialog showDialogWithImageUrl:headurl
                                  imageType:DialogImageTypeSmall
@@ -465,7 +465,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
                             }];
         } break;
         case DialogTypeNetImageTop: {
-            NSString *imageUrl = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=623994087,1173615898&fm=26&gp=0.jpg";
+            NSString *imageUrl = @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201810%2F18%2F20181018162634_pqpie.thumb.700_0.jpg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662287169&t=37b6ca18d15eac53df9ae8730bf3dd61";
 
             [Dialog showDialogWithImageUrl:imageUrl
                                  imageType:DialogImageTypeCommon
@@ -483,7 +483,7 @@ typedef NS_ENUM(NSInteger, DialogType) {
                                }];
         } break;
         case DialogTypeNetImageTopTime: {
-            NSString *imageUrl = @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=623994087,1173615898&fm=26&gp=0.jpg";
+            NSString *imageUrl = @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201810%2F18%2F20181018162634_pqpie.thumb.700_0.jpg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662287169&t=37b6ca18d15eac53df9ae8730bf3dd61";
 
             [Dialog showDialogWithImageUrl:imageUrl
                                  imageType:DialogImageTypeCommon
