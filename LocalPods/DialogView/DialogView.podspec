@@ -11,13 +11,13 @@ Pod::Spec.new do |spec|
   spec.license               = "MIT"
   spec.author                = { "Wymann chen" => "wymannchan@163.com" }
   spec.platform              = :ios
-  spec.ios.deployment_target = "9.0"
+  spec.ios.deployment_target = "10.0"
   spec.source                = { :git => "https://github.com/Wymann/DialogView.git", :tag => spec.version }
   spec.source_files          = 'DialogView/**/*.{h,m}', 'DialogView/**/**/*.{h,m}'
   spec.resource_bundles      = {
      'DialogView' => ['DialogView/Resources/*']
    }
   
-  spec.dependency "SDWebImage"
+  spec.dependency 'SDWebImage'
 
 end

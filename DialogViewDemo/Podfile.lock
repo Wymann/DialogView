@@ -1,25 +1,38 @@
 PODS:
+  - BubbleView (1.0.1):
+    - Kingfisher
+    - SnapKit
   - DialogView (1.0.1):
     - SDWebImage
+  - Kingfisher (4.10.1)
   - SDWebImage (5.13.2):
     - SDWebImage/Core (= 5.13.2)
   - SDWebImage/Core (5.13.2)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - BubbleView (from `../LocalPods/BubbleView`)
   - DialogView (from `../LocalPods/DialogView`)
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - SDWebImage
+    - SnapKit
 
 EXTERNAL SOURCES:
+  BubbleView:
+    :path: "../LocalPods/BubbleView"
   DialogView:
     :path: "../LocalPods/DialogView"
 
 SPEC CHECKSUMS:
-  DialogView: 36c1b7ad665312a7de21c053f59bf435428a92ec
+  BubbleView: a6b5fa6acb9181ff651c5647f8565745c25e972d
+  DialogView: efbca36cdb73d9245d33afad3884b688fa3e272a
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 7f296d30018a685ecc950ab784813fee7c14f916
+PODFILE CHECKSUM: 773c889983513e6fc48300b2a8dd14b4b09c791a
 
 COCOAPODS: 1.11.3

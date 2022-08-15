@@ -5,6 +5,6 @@ target 'DialogViewDemo' do
   use_frameworks!
 
   pod 'DialogView', :path => '../LocalPods/DialogView'
-#  pod 'DialogViewSwift', :path => '../LocalPods/DialogViewSwift'
+  pod 'BubbleView', :path => '../LocalPods/BubbleView' # Swift 版本
   
 end

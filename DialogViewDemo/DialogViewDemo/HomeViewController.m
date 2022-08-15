@@ -6,7 +6,8 @@
 //
 
 #import <DialogView/DialogDemoViewController.h>
-#import <DialogView/DialogSettingsViewController.h>
+
+#import <BubbleView/BubbleView-umbrella.h>
 
 #import "HomeViewController.h"
 
@@ -62,7 +63,7 @@ static NSString *const homeReuseIdentifier = @"HomeViewCell";
     }
     
     cell.textLabel.font = [UIFont systemFontOfSize:16.0];
-    cell.textLabel.text = indexPath.row == 0 ? @"Dialog 全局设置" : @"Dialog 详细示例";
+    cell.textLabel.text = indexPath.row == 0 ? @"弹框库 Dialog 示例（Objective-C）" : @"弹框库 Bubble 示例（Swift）";
     
     return cell;
 }
@@ -71,11 +72,11 @@ static NSString *const homeReuseIdentifier = @"HomeViewCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 0) {
-        DialogSettingsViewController *settings = [[DialogSettingsViewController alloc] init];
-        [self.navigationController pushViewController:settings animated:YES];
-    } else {
         DialogDemoViewController *demoVC = [[DialogDemoViewController alloc] init];
         [self.navigationController pushViewController:demoVC animated:YES];
+    } else {
+//        BubbleDemoViewController *demoVC = [[BubbleDemoViewController alloc] init];
+//        [self.navigationController pushViewController:demoVC animated:YES];
     }
 }
 

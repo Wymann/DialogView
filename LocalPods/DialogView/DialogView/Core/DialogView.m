@@ -131,6 +131,7 @@ static const CGFloat cornerRadius = 12.0;                             //圆角
 }
 
 - (void)commonConfig {
+    self.layer.zPosition = MAXFLOAT;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"closeFullScreenAndPauseVideo" object:nil];
     self.frame = CGRectMake(0, 0, DIALOG_SCREEN_WIDTH, DIALOG_SCREEN_HEIGHT);
     [[DialogView keyView] addSubview:self];

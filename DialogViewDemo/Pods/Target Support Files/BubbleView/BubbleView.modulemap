@@ -1,0 +1,6 @@
+framework module BubbleView {
+  umbrella header "BubbleView-umbrella.h"
+
+  export *
+  module * { export * }
+}
