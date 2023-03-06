@@ -18,6 +18,8 @@ struct SheetConfiguration {
     var maxShowNumber: Int = 6 // Sheet 最多展示的项（超出的滑动显示）
 
     var buttons: [String] = ["取消"] // 按钮
+    
+    static let `default` = SheetConfiguration()
 }
 
 class SheetModel {

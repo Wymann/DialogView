@@ -31,4 +31,6 @@ struct BubbleViewConfig {
     var position: BubbleStayPosition = .stayMiddle // 最后停留的位置
     var sideTap: Bool = true // 点击周边空白处是否关闭
     var bounce: Bool = BubbleConfig.shared.bubbleBounce // 是否弹性动画弹出
+    
+    static let `default` = BubbleViewConfig()
 }

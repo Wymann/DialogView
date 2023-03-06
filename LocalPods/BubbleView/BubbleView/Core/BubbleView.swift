@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BubbleView: UIView, UITextFieldDelegate, UITextViewDelegate, UIGestureRecognizerDelegate {
+class BubbleView: UIView {
     static let bubbleScreenWidth: CGFloat = UIScreen.main.bounds.size.width
     static let bubbleScreenHeight: CGFloat = UIScreen.main.bounds.size.height
 
@@ -55,7 +55,7 @@ class BubbleView: UIView, UITextFieldDelegate, UITextViewDelegate, UIGestureReco
 
     // MARK: Configuration
 
-    func configBubbleView(bubbleModels: [Any], configuration: BubbleViewConfig = BubbleViewConfig()) {
+    func configBubbleView(bubbleModels: [Any], configuration: BubbleViewConfig = .default) {
         dataModel.bubbleModels = bubbleModels
         dataModel.configuration = configuration
         commonConfig()
@@ -63,7 +63,7 @@ class BubbleView: UIView, UITextFieldDelegate, UITextViewDelegate, UIGestureReco
 
     func configBubbleViewByCustomHeight(customView: UIView,
                                                customViewHeight: CGFloat,
-                                               configuration: BubbleViewConfig = BubbleViewConfig()) {
+                                               configuration: BubbleViewConfig = .default) {
         dataModel.customView = customView
         dataModel.customViewWidth = BubbleView.contentWidth()
         dataModel.customViewHeight = customViewHeight
@@ -73,7 +73,7 @@ class BubbleView: UIView, UITextFieldDelegate, UITextViewDelegate, UIGestureReco
 
     func configBubbleViewByCustomSize(customView: UIView,
                                              customViewSize: CGSize,
-                                             configuration: BubbleViewConfig = BubbleViewConfig()) {
+                                             configuration: BubbleViewConfig = .default) {
         dataModel.customView = customView
         dataModel.customViewWidth = customViewSize.width
         dataModel.customViewHeight = customViewSize.height
@@ -492,9 +492,11 @@ class BubbleView: UIView, UITextFieldDelegate, UITextViewDelegate, UIGestureReco
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+}
 
-    // MARK: UITextFieldDelegate
+// MARK: UITextFieldDelegate
 
+extension BubbleView: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         result.inputText = textField.text ?? ""
     }
@@ -508,9 +510,11 @@ class BubbleView: UIView, UITextFieldDelegate, UITextViewDelegate, UIGestureReco
             return true
         }
     }
+}
 
-    // MARK: UITextViewDelegate
+// MARK: UITextViewDelegate
 
+extension BubbleView: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         result.inputText = textView.text ?? ""
     }
@@ -555,9 +559,11 @@ class BubbleView: UIView, UITextFieldDelegate, UITextViewDelegate, UIGestureReco
             return true
         }
     }
+}
 
-    // MARK: UIGestureRecognizerDelegate
+// MARK: UIGestureRecognizerDelegate
 
+extension BubbleView: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return touch.view == self
     }

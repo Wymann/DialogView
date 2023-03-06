@@ -11,7 +11,7 @@ import UIKit
 
 extension Bubble {
     static func showSheet(models: [SheetModel],
-                          configuration: SheetConfiguration = SheetConfiguration(),
+                                 configuration: SheetConfiguration = .default,
                           itemClickBlock: BubbleSheet.BubbleSheetItemClick? = nil,
                           buttonClickBlock: BubbleSheet.BubbleSheetButtonClick? = nil) {
         let sheetWidth = BubbleSheet.sheetWidth()

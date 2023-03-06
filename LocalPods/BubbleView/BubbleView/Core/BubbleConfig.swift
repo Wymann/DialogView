@@ -13,12 +13,16 @@ import UIKit
 struct BubbleFont {
     var normalFontName: String = "" // 普通字体
     var boldFontName: String = "" // 加粗字体
+    
+    static let `default` = BubbleFont()
 }
 
 /// 弹框主题颜色配置（自定义视图除外）
 struct BubbleColor {
     var commonColor: String = "#2D3132" // 十六进制 普通颜色
     var hintColor: String = "#E64C3D" // 十六进制 提示颜色（强调按钮、输入框 hintColor）
+    
+    static let `default` = BubbleColor()
 }
 
 /// 弹框各个数值配置（自定义视图除外）
@@ -32,6 +36,8 @@ struct BubblePattern {
 
     var cornerRadius: CGFloat = 8.0 // 弹框圆角值
     var bubbleLeftRightMargin = 36.0 // BubbleView 距离屏幕左右的距离
+    
+    static let `default` = BubblePattern()
 }
 
 class BubbleConfig {
@@ -65,8 +71,8 @@ extension BubbleConfig {
     ///   - animationType: 默认展示动画
     ///   - bounce: 默认展示时候是否弹性动画
     static func setGlobalBubble(fonts: BubbleFont? = nil,
-                                colors: BubbleColor = BubbleColor(),
-                                pattern: BubblePattern = BubblePattern(),
+                                       colors: BubbleColor = .default,
+                                       pattern: BubblePattern = .default,
                                 animationType: BubbleShowAnimation = .showFade,
                                 bounce: Bool = false) {
         BubbleConfig.shared.fonts = fonts

@@ -22,7 +22,7 @@ extension Bubble {
     @discardableResult
     static func showBubble(customView: UIView,
                            customViewHeight: CGFloat,
-                           configuration: BubbleViewConfig = BubbleViewConfig(),
+                                  configuration: BubbleViewConfig = .default,
                            resultBlock: BubbleView.BubbleViewResult?) -> BubbleView {
         let view = bubble(customView: customView,
                           customViewHeight: customViewHeight,
@@ -42,7 +42,7 @@ extension Bubble {
     @discardableResult
     static func showBubble(customView: UIView,
                            customViewSize: CGSize,
-                           configuration: BubbleViewConfig = BubbleViewConfig(),
+                                  configuration: BubbleViewConfig = .default,
                            resultBlock: BubbleView.BubbleViewResult?) -> BubbleView {
         let view = bubble(customView: customView,
                           customViewSize: customViewSize,
@@ -65,7 +65,7 @@ extension Bubble {
     /// - Returns: BubbleView
     static func bubble(customView: UIView,
                        customViewHeight: CGFloat,
-                       configuration: BubbleViewConfig = BubbleViewConfig(),
+                              configuration: BubbleViewConfig = .default,
                        resultBlock: BubbleView.BubbleViewResult?) -> BubbleView {
         let view = BubbleView()
         view.configBubbleViewByCustomHeight(customView: customView,
@@ -84,7 +84,7 @@ extension Bubble {
     /// - Returns: BubbleView
     static func bubble(customView: UIView,
                        customViewSize: CGSize,
-                       configuration: BubbleViewConfig = BubbleViewConfig(),
+                              configuration: BubbleViewConfig = .default,
                        resultBlock: BubbleView.BubbleViewResult?) -> BubbleView {
         let view = BubbleView()
         view.configBubbleViewByCustomSize(customView: customView,
